@@ -1,0 +1,75 @@
+// @import "./core";
+
+// @include typography-set(
+//   paragraph,
+//   (
+//     large: 17_21,
+//     small: 14_18,
+//   )
+// );
+
+// @include typography-set(
+//   paragraph-semibold,
+//   (
+//     large:
+//       typespec-extend("17_21_semibold", $extends: "17_21", $weight: semibold),
+//     small:
+//       typespec-extend("14_18_semibold", $extends: "14_18", $weight: semibold),
+//   )
+// );
+
+// @include typography-set(
+//   modal-headline,
+//   (
+//     large: 56_60_semibold,
+//     medium: 48_52_semibold,
+//     small: 40_44_semibold,
+//     xsmall: 32_36_semibold,
+//   )
+// );
+
+// @include typography-set(
+//   modal-body-copy,
+//   (
+//     large: 19_27,
+//     small: 17_25,
+//   )
+// );
+
+// @include typography-set(
+//   modal-body-copy-semibold,
+//   (
+//     large:
+//       typespec-extend("19_27_semibold", $extends: "19_27", $weight: semibold),
+//     small:
+//       typespec-extend("17_25_semibold", $extends: "17_25", $weight: semibold),
+//   )
+// );
+
+// .headline {
+//   @include typography(eyebrow-elevated);
+// }
+
+// .skDefaultBodyCopy {
+//   @include typography(body);
+// }
+
+// .bodyCopy {
+//   @include typography(paragraph);
+// }
+
+// .bodyCopySemibold {
+//   @include typography(paragraph-semibold);
+// }
+
+// .modalHeadline {
+//   @include typography(modal-headline);
+// }
+
+// .modalCopy {
+//   @include typography(modal-body-copy);
+// }
+
+// .modalCopySemibold {
+//   @include typography(modal-body-copy-semibold);
+// }

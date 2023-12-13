@@ -5,16 +5,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "BROWSER=chrome storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@next/font": "^14.0.4",
     "@types/node": "18.15.12",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.0.11",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.69.5",
     "typescript": "5.0.4"
   },
   "devDependencies": {
@@ -25,9 +27,19 @@
     "@storybook/nextjs": "^7.0.6",
     "@storybook/react": "^7.0.6",
     "@storybook/testing-library": "^0.0.14-next.2",
-    "storybook": "^7.0.6"
+    "@types/postcss-mixins": "^9",
+    "classnames": "^2.3.2",
+    "postcss": "^8.4.32",
+    "postcss-import": "^15.1.0",
+    "postcss-include": "^0.3.1",
+    "postcss-mixins": "^9.0.4",
+    "postcss-nested": "^6.0.1",
+    "sass": "^1.69.5",
+    "storybook": "^7.0.6",
+    "storybook-addon-next": "^1.8.0"
   },
   "engines": {
-    "node": ">=16"
-  }
+    "node": ">=18"
+  },
+  "packageManager": "yarn@4.0.2"
 }

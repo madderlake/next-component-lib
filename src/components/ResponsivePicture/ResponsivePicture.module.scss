@@ -1,0 +1,102 @@
+@import "ac-sasskit/core";
+
+@mixin addViewportCSSVariable($prop, $varPrefix, $varKey) {
+  &__picture > :global(img) {
+    #{$prop}: var(--#{$varPrefix}-#{$varKey}-default);
+  }
+
+  @each $viewport in viewport-list(default) {
+    &[data-#{$varPrefix}-#{$varKey}-#{$viewport}] &__picture {
+      @include viewport($viewport) {
+        & > :global(img) {
+          #{$prop}: var(--#{$varPrefix}-#{$varKey}-#{$viewport});
+        }
+      }
+    }
+  }
+}
+
+@mixin picture-layout() {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  & :global(img) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin layout-fill() {
+  width: 100%;
+  height: 100%;
+
+  & :global(picture) {
+    @include picture-layout();
+  }
+}
+
+@mixin layout-sized($viewport) {
+  width: var(--vp-w-#{$viewport});
+  height: var(--vp-h-#{$viewport});
+
+  & :global(picture) {
+    @include picture-layout();
+  }
+}
+
+@mixin addDefaultFallbacks() {
+  @each $viewport in viewport-list(default) {
+    &-vp-layout-default--sized[data-vp-w-#{$viewport}][data-vp-h-#{$viewport}] {
+      @include viewport($viewport) {
+        @include layout-sized($viewport);
+      }
+    }
+
+    &-vp-layout-default--fill[data-vp-w-#{$viewport}][data-vp-h-#{$viewport}] {
+      @include viewport($viewport) {
+        @include layout-fill();
+      }
+    }
+  }
+}
+
+.responsive-picture {
+  position: relative;
+  // object-fit as gets written as --rp-of-${viewport}
+  @include addViewportCSSVariable(object-fit, rp, of);
+  // object-position as gets written as --rp-op-${viewport}
+  @include addViewportCSSVariable(object-position, rp, op);
+  // Add default values for all images
+  @include addDefaultFallbacks();
+
+  @each $viewport in viewport-list(default) {
+    &-vp-layout-#{$viewport}--sized[data-vp-w-#{$viewport}][data-vp-h-#{$viewport}] {
+      @include viewport($viewport) {
+        @include layout-sized($viewport);
+      }
+    }
+
+    @include viewport($viewport) {
+      // Repeate the data attributes here to keep the same specificity as above
+      // They should always exist anyway
+      &-vp-layout-#{$viewport}--fill[data-vp-w-#{$viewport}][data-vp-h-#{$viewport}] {
+        @include layout-fill();
+      }
+    }
+  }
+
+  &--no-load &__picture__js :global(img) {
+    display: none;
+  }
+
+  &--removed &__picture__js {
+    // TODO: Dig into specificity to not have important.
+    display: none !important;
+  }
+
+  &--active &__picture__no-js {
+    display: none;
+  }
+}

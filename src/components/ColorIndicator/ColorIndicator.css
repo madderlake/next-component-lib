@@ -1,0 +1,22 @@
+/* @import "@/styles/shared/_core.css"; */
+/* @import "ac-sasskit/modules/colorindicator"; */
+
+.colorindicator-items {
+  width: auto;
+}
+.colorindicator-item {
+  height: 14px;
+  list-style-type: none;
+  display: inline-flex;
+  margin: 0 2px;
+}
+.colorindicator-swatch {
+  width: 14px;
+  border-radius: 50%;
+}
+
+.colorindicator-label {
+  font-family: SF Pro Text, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: small;
+  vertical-align: text-top;
+}

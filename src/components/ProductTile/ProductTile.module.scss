@@ -1,0 +1,214 @@
+@use "sass:math";
+@use "ac-sasskit/modules/button/core" as btn;
+@use "ac-sasskit/core/typography";
+@import "styles/shared/_core";
+
+$tile-width: (
+  "xlarge": 405,
+  "large": 372,
+  "medium": 344,
+  "small": 304,
+  "xsmall": 260,
+);
+
+$tile-dark-text-color: swatch(glyph-gray, dark);
+
+.productTile {
+  @include css-grouped(
+    (
+      x-large: (
+        width: 405px,
+        min-height: 623px,
+      ),
+      large: (
+        width: 372px,
+        min-height: 590px,
+      ),
+      medium: (
+        width: 344px,
+        min-height: 558px,
+      ),
+      small: (
+        width: 304px,
+        min-height: 469px,
+      ),
+      x-small: (
+        width: 260px,
+        min-height: 425px,
+      ),
+    )
+  );
+
+  &:hover {
+    transform: none;
+  }
+
+  &.darkTheme {
+    --sk-body-text-color: #{$tile-dark-text-color};
+    --sk-headline-text-color: #{$tile-dark-text-color};
+    .buttonDark {
+      &:hover {
+        color: var(--button-hover-dark-text-color);
+        background: var(--button-hover-dark-background-color);
+      }
+
+      &:active {
+        background: var(--button-active-dark-background-color);
+      }
+    }
+  }
+}
+
+.productImage {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @include viewport(small) {
+    justify-content: flex-start;
+  }
+
+  figure {
+    @each $viewport, $width in $tile-width {
+      @include viewport($viewport) {
+        $tile-scale-value: math.div($width + 6, $width);
+        transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
+        &:hover {
+          transform: scale(#{$tile-scale-value});
+        }
+      }
+    }
+  }
+}
+
+.contentGrid {
+  margin-bottom: 40px;
+  text-align: center;
+  display: grid;
+
+  @include css-grouped(
+    (
+      large: (
+        padding: 0 28px,
+      ),
+      medium: (
+        padding: 0 24px,
+      ),
+      small: (
+        padding: 0,
+      ),
+    )
+  );
+
+  @include viewport(small) {
+    text-align: start;
+  }
+}
+
+.optionalElementsGrid {
+  --color-indicator-height: 42px;
+  --badge-height: 24px;
+  --heading-height: 32px;
+  --subhead-height: 27px;
+
+  display: grid;
+  grid-template-rows:
+    minmax(var(--color-indicator-height), max-content)
+    minmax(var(--badge-height), max-content)
+    minmax(var(--heading-height), max-content)
+    minmax(var(--subhead-height), max-content);
+  grid-template-areas: "row1" "row2" "row3" "row4";
+  justify-content: center;
+  align-items: start;
+
+  @include viewport(small) {
+    justify-content: start;
+  }
+  &.collapsedIndicators {
+    --color-indicator-height: 0;
+  }
+
+  &.collapsedBadges {
+    --badge-height: 0;
+  }
+
+  &.collapsedSubheads {
+    --subhead-height: 0;
+  }
+}
+
+.colorIndicator {
+  display: grid;
+  align-items: start;
+  grid-area: row1;
+  @include viewport(small) {
+    justify-content: flex-start;
+  }
+}
+/* violator will be updated to "badge" in a future release of SK8 */
+.violator {
+  text-align: center;
+  grid-area: row2;
+  padding: 0;
+  @include viewport(small) {
+    text-align: start;
+  }
+}
+
+.contentLink {
+  color: var(--sk-body-text-color);
+  text-decoration: none;
+}
+
+.copy {
+  margin: 16px 0;
+
+  @include viewport(small) {
+    margin: 12px 0;
+  }
+}
+
+.heading {
+  grid-area: row3;
+}
+
+.subHeading {
+  margin: 0;
+  padding-top: 6px;
+  grid-area: row4;
+}
+
+.tileFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+
+  @include viewport(small) {
+    justify-content: flex-start;
+    gap: 28px;
+  }
+}
+
+.button {
+  @include btn.button;
+  @include btn.button-variant-secondary-neutral;
+
+  text-decoration: none;
+
+  @include viewport("range:medium up") {
+    @include btn.button-variant-elevated;
+  }
+
+  @include viewport(small) {
+    @include typography.typespec(14_18);
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
+
+.buyLink {
+  color: var(--sk-body-text-color);
+  line-height: 24px;
+}

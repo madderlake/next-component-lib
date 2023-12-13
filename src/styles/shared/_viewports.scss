@@ -1,0 +1,60 @@
+@import "./core";
+// @import "ac-sasskit/modules/viewportcontent/core";
+
+$viewports-flexible-from: false;
+$viewport-content-classname: "responsiveContent";
+$viewport-max-width: 1680px;
+
+@mixin viewport-set($viewport-name, $minWidth, $maxWidth: 0, $contentWidth) {
+  min-width: $minWidth;
+  max-width: $maxWidth;
+  content: $contentWidth;
+}
+@include viewport-set(
+  "xlarge",
+  (
+    min-width: 1441px,
+    content: 87.5vw,
+  )
+);
+
+@include viewport-set(
+  "large",
+  (
+    min-width: 1069px,
+    max-width: 1440px,
+    content: 87.5vw,
+  )
+);
+
+@include viewport-set(
+  "medium",
+  (
+    min-width: 735px,
+    max-width: 1068px,
+    content: 87.5vw,
+  )
+);
+
+@include viewport-set(
+  "small",
+  (
+    min-width: 481px,
+    max-width: 734px,
+    content: 87.5vw,
+  )
+);
+
+@include viewport-set(
+  "xsmall",
+  (
+    min-width: 320px,
+    max-width: 480px,
+    content: 87.5vw,
+  )
+);
+
+@mixin responsive-content() {
+  @include viewport-content();
+  max-width: $viewport-max-width;
+}

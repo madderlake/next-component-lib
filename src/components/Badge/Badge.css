@@ -1,0 +1,124 @@
+/* @import "ac-sasskit/core";
+@import "ac-sasskit/modules/badge"; */
+.badge {
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #bf4800;
+  color: #bf4800;
+  font-size: 17px;
+  line-height: 1.1764805882;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  border-radius: 18px;
+  padding: 7px 18px;
+}
+
+.badge-inline {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.badge-secondary {
+  background: transparent;
+  border-color: #6e6e73;
+  color: #6e6e73;
+}
+
+.badge-reduced {
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  border-radius: 12px;
+  padding: 3px 11px;
+}
+
+.badge-reduced.badge-inline {
+  margin-left: 6px;
+  display: inline-block;
+}
+
+.badge-frameless {
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: block;
+  color: #bf4800;
+  border: none;
+}
+
+.badge-frameless-inline {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.badge-frameless.badge-frameless-reduced {
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(ar) {
+  letter-spacing: 0em;
+  font-family: SF Pro AR, SF Pro AR Text, SF Pro Text, SF Pro Gulf, SF Pro Icons,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(ja) {
+  letter-spacing: 0em;
+  font-family: SF Pro JP, SF Pro Text, SF Pro Icons, Hiragino Kaku Gothic Pro,
+    ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(ko) {
+  letter-spacing: 0em;
+  font-family: SF Pro KR, SF Pro Text, SF Pro Icons, Apple Gothic, HY Gulim,
+    MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(zh) {
+  letter-spacing: 0em;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(th) {
+  font-family: SF Pro TH, SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(zh-CN) {
+  font-family: SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(zh-HK) {
+  font-family: SF Pro HK, SF Pro Text, SF Pro Icons, PingFang HK, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(zh-MO) {
+  font-family: SF Pro HK, SF Pro TC, SF Pro Text, SF Pro Icons, PingFang HK,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced:lang(zh-TW) {
+  font-family: SF Pro TC, SF Pro Text, SF Pro Icons, PingFang TC, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+}
+
+.badge-frameless.badge-frameless-reduced.badge-frameless-inline {
+  margin-left: 6px;
+  display: inline-block;
+}

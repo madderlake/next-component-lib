@@ -1,0 +1,52 @@
+@import "../../styles/shared/core";
+// @include typography-set(
+//   title,
+//   (
+//     large: typespec-set("56_60_semibold", 56, 60, semibold),
+//     medium: typespec-set("48_52_semibold", 48, 52, semibold),
+//     small: typespec-set("32_36_semibold", 32, 36, semibold),
+//     xsmall: typespec-set("28_32_semibold", 28, 32, semibold),
+//   )
+// );
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+
+  @include viewport(medium) {
+    margin-bottom: 64px;
+  }
+
+  @include viewport(small) {
+    margin-bottom: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.description {
+  max-width: 280px;
+  margin-bottom: 3px;
+
+  @include viewport(medium) {
+    max-width: 200px;
+  }
+
+  @include viewport(small) {
+    max-width: 75%;
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  //@include typography(title);
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  font-family: "SFProDisplay", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  max-width: 75%;
+}

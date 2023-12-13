@@ -1,0 +1,61 @@
+@import "@/styles/shared/core";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 96px;
+  @include viewport(medium) {
+    margin-bottom: 88px;
+  }
+  @include viewport(small) {
+    margin-bottom: 72px;
+  }
+}
+
+.description {
+  margin: 0px;
+  align-self: flex-end;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  @include typography(description);
+
+  @include viewport(xlarge) {
+    width: 400px;
+  }
+
+  @include viewport(large) {
+    width: 320px;
+  }
+
+  @include viewport(medium) {
+    width: 280px;
+  }
+}
+
+@include typography-set(
+  title-xs,
+  (
+    xsmall: 40_44_semibold,
+  )
+);
+
+.title {
+  margin-right: 80px;
+  flex-grow: 1;
+  @include typography(headline-super);
+
+  @include viewport(medium) {
+    margin-right: 64px;
+  }
+
+  @include viewport(small) {
+    margin-right: 0px;
+    flex-basis: 100%;
+  }
+
+  @include viewport(xsmall) {
+    @include typography(title-xs);
+  }
+}

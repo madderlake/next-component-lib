@@ -1,0 +1,20 @@
+@import "@/styles/shared/core";
+
+.section {
+  padding-top: 160px;
+  padding-bottom: 160px;
+
+  @include viewport(medium) {
+    padding-top: 128px;
+  }
+  @include viewport(small) {
+    padding-top: 96px;
+  }
+}
+.noBottomPadding {
+  padding-bottom: 0;
+}
+
+.backgroundAlt {
+  background-color: swatch(fill-tertiary);
+}

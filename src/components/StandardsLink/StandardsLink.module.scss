@@ -1,0 +1,52 @@
+@import "../../styles/shared/core";
+
+// https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/2b7cd5b2efba05e013ce7acc833e232d4eee8f91/src/scss/ac-sasskit/modules/link/_base.scss#L12-L21
+.link {
+  // @include link;
+  text-decoration: none;
+
+  // This is where the magic happens
+  // Prevents the icon from gaining underline on hover
+  // Remove text-decoration from the link el on hover
+  &:hover {
+    // Required to override this setting coming from SK core/_link.scss
+    // https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/develop-8.0/src/scss/ac-sasskit/core/_link.scss#L33-L35
+    text-decoration: none;
+
+    // Then only apply it back to the copy container
+    .copy {
+      text-decoration: underline;
+    }
+  }
+}
+
+// https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/2b7cd5b2efba05e013ce7acc833e232d4eee8f91/src/scss/ac-sasskit/base/_icons.scss#L234-L236
+[dir="rtl"] .copy {
+  unicode-bidi: embed;
+}
+
+.copy {
+  font-family: "SFProDisplay", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
+  color: #0071e3;
+  font-size: 17px;
+  letter-spacing: 0.022em;
+  line-height: 1.381;
+  font-weight: 400;
+  &:after {
+    content: " \203A";
+    font-size: 19px;
+  }
+}
+// https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/develop-8.0/src/scss/ac-sasskit/base/_icons.scss#L206-L212
+.icon,
+.iconAfter::after,
+.iconBefore:before {
+  display: inline;
+  position: static;
+}
+
+//https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/2b7cd5b2efba05e013ce7acc833e232d4eee8f91/src/scss/ac-sasskit/base/_icons.scss#L230-L232
+[dir="rtl"] .withIcon {
+  unicode-bidi: bidi-override;
+}

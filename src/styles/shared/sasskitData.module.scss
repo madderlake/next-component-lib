@@ -1,0 +1,24 @@
+// @use "sass:map";
+// @import "ac-sasskit/core/viewports";
+// @import "./viewports";
+
+// $sk-viewports: ();
+
+// @each $vp in viewport-list() {
+//   $sk-viewports: map.set($sk-viewports, $vp, viewport-get($vp));
+// }
+
+// :import("@/contexts/Viewport/utils/SassKitData.module.scss") {
+//   __portrait: portrait;
+//   __landscape: landscape;
+//   __inverted-colors: inverted-colors;
+//   __retina: retina;
+// }
+
+// :export {
+//   viewports: serialize($sk-viewports);
+//   portrait: __portrait;
+//   landscape: __landscape;
+//   inverted-colors: __inverted-colors;
+//   retina: __retina;
+// }

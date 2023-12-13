@@ -1,0 +1,16 @@
+// @import "ac-sasskit/core";
+
+// SassKit ltr/rtl mixins scope to the html el
+// Omitting the html scoping enables these
+// styles to also apply to `dir` changes mid-page
+[dir="rtl"] [dir="ltr"] .icon::after,
+[dir="rtl"] [dir="ltr"] .icon::before {
+  content: var(--sficon-char-ltr);
+}
+
+[dir="rtl"] .icon::after,
+[dir="rtl"] .icon::before,
+[dir="ltr"] [dir="rtl"] .icon::after,
+[dir="ltr"] [dir="rtl"] .icon::before {
+  content: var(--sficon-char-rtl);
+}

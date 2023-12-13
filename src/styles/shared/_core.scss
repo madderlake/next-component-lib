@@ -1,0 +1,35 @@
+/* @import "ac-sasskit/core"; */
+@import "./fonts";
+@mixin viewport-set(
+  $viewport-name,
+  $minWidth,
+  $maxWidth: 0,
+  $content: $contentWidth
+) {
+  min-width: $minWidth;
+  max-width: $maxWidth;
+}
+
+@mixin viewport($size) {
+  @if $size == xsmall {
+    @media (min-width: 320px) and (max-width: 480px) {
+      @content;
+    }
+  } @else if $size == small {
+    @media (min-width: 481px) and (max-width: 734px) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media (min-width: 735px) and (max-width: 1068p) {
+      @content;
+    }
+  } @else if $size == large {
+    @media (min-width: 1069px) and (max-width: 1440px) {
+      @content;
+    }
+  } @else if $size == xlarge {
+    @media (min-width: 1441px) {
+      @content;
+    }
+  }
+}

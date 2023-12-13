@@ -1,0 +1,10 @@
+@import "ac-sasskit/core/viewports";
+
+:export {
+  viewports: serialize($-viewports);
+  portrait: serialize(portrait());
+  landscape: serialize(landscape());
+  inverted-colors: serialize(inverted-colors());
+  // retina does not need to be serialized
+  retina: retina();
+}
