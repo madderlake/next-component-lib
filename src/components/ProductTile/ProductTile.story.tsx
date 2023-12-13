@@ -3,7 +3,7 @@ import React from "react";
 
 import type { ColorIndicatorProps } from "@/components/ColorIndicator/ColorIndicator";
 import { LoadImagesProvider } from "@/contexts/LoadImages/LoadImagesProvider";
-import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
+// import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
 import sassData from "@/styles/shared/sasskitData.module.scss";
 
 import { IMAGE_DATA } from "./imageData";
@@ -62,22 +62,22 @@ const Template: StoryFn<ProductTileProps> = (args) => {
   const containerRef = React.useRef(null);
 
   return (
-    <SassKitViewportsProvider sassData={sassData}>
-      <LoadImagesProvider containerRef={containerRef}>
-        <div
-          ref={containerRef}
-          style={{
-            paddingTop: "2rem",
-            height: "100vh",
-            backgroundColor: args.theme === "light" ? "#F5F5F7" : "#000",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <ProductTile {...args} />
-        </div>
-      </LoadImagesProvider>
-    </SassKitViewportsProvider>
+    // <SassKitViewportsProvider sassData={sassData}>
+    <LoadImagesProvider containerRef={containerRef}>
+      <div
+        ref={containerRef}
+        style={{
+          paddingTop: "2rem",
+          height: "100vh",
+          backgroundColor: args.theme === "light" ? "#F5F5F7" : "#000",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <ProductTile {...args} />
+      </div>
+    </LoadImagesProvider>
+    // </SassKitViewportsProvider>
   );
 };
 

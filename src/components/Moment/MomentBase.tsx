@@ -7,8 +7,8 @@ import type { SectionProps } from "@/components/Section/Section";
 import { Section } from "@/components/Section/Section";
 import type { SectionHeaderProps } from "@/components/SectionHeader/SectionHeader";
 import { SectionHeader } from "@/components/SectionHeader/SectionHeader";
-import { LoadImagesProvider } from "contexts/LoadImages/LoadImagesProvider";
-import type { ThemeProps } from "types/theme";
+import { LoadImagesProvider } from "@/contexts/LoadImages/LoadImagesProvider";
+import type { ThemeProps } from "@/types/theme";
 
 import styles from "./Moment.module.scss";
 import type { MomentRefs } from "./types";

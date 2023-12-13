@@ -17,7 +17,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.69.5",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "ua-parser-js": "^1.0.37"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.6",
@@ -27,8 +28,11 @@
     "@storybook/nextjs": "^7.0.6",
     "@storybook/react": "^7.0.6",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/lodash-es": "^4",
     "@types/postcss-mixins": "^9",
+    "@types/ua-parser-js": "^0.7.39",
     "classnames": "^2.3.2",
+    "lodash-es": "^4.17.21",
     "postcss": "^8.4.32",
     "postcss-import": "^15.1.0",
     "postcss-include": "^0.3.1",

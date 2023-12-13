@@ -1,4 +1,4 @@
-import { deserialize } from "@marcom/sass-utilities";
+// import { deserialize } from "@marcom/sass-utilities";
 import { sortedIndexBy } from "lodash-es";
 
 import type {
@@ -71,7 +71,8 @@ interface SassKitViewports {
 export const getSassKitViewports = (
   sassViewportsStr: string
 ): SassKitViewports => {
-  const deserializedViewports = deserialize(sassViewportsStr);
+  const deserializedViewports = JSON.parse(sassViewportsStr);
+  console.log(deserializedViewports);
   const sassObj = deserializedViewports as {
     [key: string]: RawSassKitViewport;
   };

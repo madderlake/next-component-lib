@@ -1,10 +1,10 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React, { useEffect, useRef } from "react";
 
-import { BaseExperienceProvider } from "contexts/BaseExperience/BaseExperienceProvider";
-import { SassKitViewportsProvider } from "contexts/Viewport/SassKitViewportsProvider";
+import { BaseExperienceProvider } from "@/contexts/BaseExperience/BaseExperienceProvider";
+//import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
 import { useTimeGroupContext } from "@/hooks/anim/useTimeGroupContext";
-import sassData from "@/styles/shared/sasskitData.module.scss";
+//import sassData from "@/styles/shared/sasskitData.module.scss";
 
 import type { MomentProps } from "./Moment";
 import { Moment } from "./Moment";
@@ -66,13 +66,13 @@ export default {
 } satisfies Meta<typeof Moment>;
 
 const Template: StoryFn<MomentProps> = (props: MomentProps) => (
-  <SassKitViewportsProvider sassData={sassData}>
-    <BaseExperienceProvider>
-      <Moment {...props}>
-        <AnimatedContent>Section content goes here</AnimatedContent>
-      </Moment>
-    </BaseExperienceProvider>
-  </SassKitViewportsProvider>
+  // <SassKitViewportsProvider sassData={sassData}>
+  <BaseExperienceProvider>
+    <Moment {...props}>
+      <AnimatedContent>Section content goes here</AnimatedContent>
+    </Moment>
+  </BaseExperienceProvider>
+  // </SassKitViewportsProvider>
 );
 
 export const Basic = Template.bind({});

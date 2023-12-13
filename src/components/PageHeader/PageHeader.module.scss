@@ -1,4 +1,4 @@
-@import "@/styles/shared/core";
+@import "../../styles/shared/core";
 
 .container {
   display: flex;
@@ -19,7 +19,7 @@
   align-self: flex-end;
   padding-bottom: 8px;
   padding-top: 8px;
-  @include typography(description);
+  // @include typography(description);
 
   @include viewport(xlarge) {
     width: 400px;
@@ -34,17 +34,17 @@
   }
 }
 
-@include typography-set(
-  title-xs,
-  (
-    xsmall: 40_44_semibold,
-  )
-);
+// @include typography-set(
+//   title-xs,
+//   (
+//     xsmall: 40_44_semibold,
+//   )
+// );
 
 .title {
   margin-right: 80px;
   flex-grow: 1;
-  @include typography(headline-super);
+  // @include typography(headline-super);
 
   @include viewport(medium) {
     margin-right: 64px;
@@ -56,6 +56,6 @@
   }
 
   @include viewport(xsmall) {
-    @include typography(title-xs);
+    // @include typography(title-xs);
   }
 }

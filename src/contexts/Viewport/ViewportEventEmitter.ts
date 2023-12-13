@@ -1,4 +1,4 @@
-import EventEmitterMicro from "@marcom/ac-event-emitter-micro";
+// import EventEmitterMicro from "@marcom/ac-event-emitter-micro";
 
 import type {
   RangeViewport,
@@ -38,7 +38,7 @@ class ViewportEventEmitter {
   private mediaQueriesInitialized: boolean;
   private activeViewportName: string | null;
   private readonly activeScreenPropValues: Map<string, boolean>;
-  private readonly emitter: EventEmitterMicro;
+  // private readonly emitter: EventEmitterMicro;
   private mediaQueriesCache: MediaQueryCacheItem[];
   private callbackCount: number;
   private didDestroy: boolean;
@@ -56,7 +56,7 @@ class ViewportEventEmitter {
     this.mediaQueriesInitialized = false;
     this.activeViewportName = null;
     this.activeScreenPropValues = new Map<string, boolean>();
-    this.emitter = new EventEmitterMicro();
+    // this.emitter = new EventEmitterMicro();
     this.mediaQueriesCache = [];
     this.callbackCount = 0;
     this.didDestroy = false;
@@ -183,7 +183,7 @@ class ViewportEventEmitter {
   };
 
   public destroy = (): void => {
-    this.emitter.destroy();
+    //this.emitter.destroy();
     this._teardownMediaQueries();
     this.viewports = {};
     this.rangeViewports = {};
@@ -197,14 +197,14 @@ class ViewportEventEmitter {
       this._setupMediaQueries();
     }
 
-    this.emitter.on(eventName, callback);
+    // this.emitter.on(eventName, callback);
     this.callbackCount++;
 
     return true;
   }
 
   private _off(eventName: string, callback?: EECallback): boolean {
-    this.emitter.off(eventName, callback);
+    // this.emitter.off(eventName, callback);
     this.callbackCount--;
 
     if (this.callbackCount === 0) {
@@ -339,7 +339,7 @@ class ViewportEventEmitter {
         this.activeViewportName = viewportName;
         const emitterKey =
           ViewportEventEmitter.getViewportEmitterKey(viewportName);
-        this.emitter.trigger(emitterKey, { ...viewportObj });
+        // this.emitter.trigger(emitterKey, { ...viewportObj });
       }
     }
   }
@@ -352,7 +352,7 @@ class ViewportEventEmitter {
       this.activeScreenPropValues.set(screenPropName, matches);
       const emitterKey =
         ViewportEventEmitter.getScreenPropEmitterKey(screenPropName);
-      this.emitter.trigger(emitterKey, matches);
+      //this.emitter.trigger(emitterKey, matches);
     }
   }
 

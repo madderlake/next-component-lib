@@ -1,8 +1,8 @@
 /* eslint-disable max-lines-per-function */
-import type { Keyframe, KeyframeOptions } from "@marcom/anim-system";
+// import type { Keyframe, KeyframeOptions } from "@marcom/anim-system";
 import { useEffect, useRef, useState } from "react";
 
-import { TimeGroupProvider } from "contexts/Anim/timeGroup/TimeGroupProvider";
+import { TimeGroupProvider } from "@/contexts/Anim/timeGroup/TimeGroupProvider";
 import { useTimeline } from "@/hooks/anim/useTimeline";
 
 import animationStyles from "../../styles/shared/animationDefaults.module.scss";
@@ -42,13 +42,13 @@ export const MomentEnhanced = ({
 
     const animationKFs: Keyframe[] = [];
     for (const ref of refArray) {
-      const opacityKf: KeyframeOptions = {
+      const opacityKf: any = {
         start,
         end: start + OPACITY_DURATION,
         opacity: [0, 1],
         easeFunction: "easeInOutQuad",
       };
-      const moveKf: KeyframeOptions = {
+      const moveKf: any = {
         start,
         end: start + MOVE_DURATION,
         y: [null, 0],
@@ -80,7 +80,7 @@ export const MomentEnhanced = ({
 
     return () => {
       for (const animationKF of animationKFs) {
-        void animationKF.remove();
+        //void animationKF.remove();
       }
       if (keyframe !== undefined) {
         void keyframe.remove();
