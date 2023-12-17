@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 
-import { debounce } from "@marcom/function-utils";
-
+// import { debounce } from "@marcom/function-utils";
+import { useDebouncedCallback } from "use-debounce";
 import {
   getViewportHeight,
   getViewportWidth,
-} from "@/lib/getViewportDimensions";
+} from "../../lib/getViewportDimensions";
 
 import { WindowContext } from "./WindowContext";
 
@@ -30,15 +30,12 @@ export function WindowContextProvider({
   const [clientWidth, setClientWidth] = useState<number>(getViewportWidth());
   const [scrollY, setScrollY] = useState<number>(getScroll());
 
+  const handleResize = useDebouncedCallback((): void => {
+    setClientHeight(getViewportHeight());
+    setClientWidth(getViewportWidth());
+  });
   // updates clientWidth and clientHeight on resize
   useEffect(() => {
-    let handleResize = (): void => {
-      setClientHeight(getViewportHeight());
-      setClientWidth(getViewportWidth());
-    };
-
-    handleResize = debounce(handleResize, wait, {});
-
     window.addEventListener("resize", handleResize);
 
     return () => {

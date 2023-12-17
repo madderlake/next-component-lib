@@ -18,7 +18,8 @@
     "react-dom": "18.2.0",
     "sass": "^1.69.5",
     "typescript": "5.0.4",
-    "ua-parser-js": "^1.0.37"
+    "ua-parser-js": "^1.0.37",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.6",

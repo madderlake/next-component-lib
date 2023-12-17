@@ -1,0 +1,23 @@
+@import "../../../styles/shared/core";
+// @import "ac-sasskit/modules/paddlenav";
+
+.grid {
+  display: grid;
+  grid-template-columns: fit-content(50%) fit-content(50%);
+  gap: 20px;
+}
+
+.paddlenav {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+  /* override sk paddlenav-base mixin */
+  margin: 0 auto;
+
+  ul {
+    width: 92px;
+    height: 36px;
+    list-style-type: none;
+  }
+}

@@ -1,0 +1,104 @@
+@import "../../styles/shared/_core";
+
+$dark-scrim-background-color: swatch(fill-gray-quaternary, dark);
+$dark-scrim-hover-background-color: #{color-adjust-white(
+    $dark-scrim-background-color,
+    2%
+  )};
+$dark-scrim-active-background-color: #{color-adjust-black(
+    $dark-scrim-background-color,
+    8%
+  )};
+
+$dark-icon-color: swatch(glyph-gray-secondary-alt, dark, alpha);
+$dark-icon-interaction-color: swatch(fill);
+
+$light-scrim-background-color: swatch(fill-gray-quaternary);
+$light-scrim-hover-background-color: #{color-adjust-white(
+    $light-scrim-background-color,
+    16%
+  )};
+$light-scrim-active-background-color: #{color-adjust-black(
+    $light-scrim-background-color,
+    4%
+  )};
+
+$light-icon-color: swatch(glyph-gray-secondary, light, alpha);
+$light-icon-interaction-color: #{color-adjust-black($light-icon-color, 8%)};
+
+$transition-time: 100ms;
+
+button.control {
+  transition: background-color $transition-time linear,
+    color $transition-time linear, $transition-time opacity linear;
+
+  // &:focus {
+  //  // @include focus-shadow-offset;
+  // }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.control {
+  --scrim-background-color: #{$light-scrim-background-color};
+  --scrim-hover-background-color: #{$light-scrim-hover-background-color};
+  --scrim-active-background-color: #{$light-scrim-active-background-color};
+  --icon-color: #{$light-icon-color};
+  --icon-interaction-color: #{$light-icon-interaction-color};
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color $transition-time linear,
+    color $transition-time linear;
+
+  background-color: var(--scrim-background-color);
+  color: var(--icon-color);
+  &:hover {
+    background-color: var(--scrim-hover-background-color);
+
+    color: var(--icon-interaction-color);
+  }
+
+  &:active {
+    background-color: var(--scrim-active-background-color);
+    color: var(--icon-interaction-color);
+  }
+
+  svg {
+    fill: currentColor;
+    pointer-events: none; // Pointer events on icon
+  }
+}
+
+.controlDarkTheme {
+  --scrim-background-color: #{$dark-scrim-background-color};
+  --scrim-hover-background-color: #{$dark-scrim-hover-background-color};
+  --scrim-active-background-color: #{$dark-scrim-active-background-color};
+  --icon-color: #{$dark-icon-color};
+  --icon-interaction-color: #{$dark-icon-interaction-color};
+}
+
+.centeredSmallIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.paddleNavIcons {
+  height: 100%;
+  width: 100%;
+  [dir="rtl"] & {
+    transform: scaleX(-1);
+  }
+}

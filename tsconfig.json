@@ -21,11 +21,12 @@
       }
     ],
     "paths": {
-      // "@/*": ["/*"],
+      "@/*": [".*"],
       "@/styles*": ["src/styles/*"],
       "@/components/*": ["src/components/*"],
       "@/contexts/*": ["src/contexts/*"],
       "@/hooks/*": ["src/hooks/*"],
+      "@/layouts/*": ["src/layouts/*"],
       "@/types/*": ["src/types/*"]
       // "@/fonts": ["src/styles/fonts"],
       // "@/fontassets/*": ["public/assets/fonts/*"]

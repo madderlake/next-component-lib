@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { TextZoom } from "@marcom/ac-accessibility";
+// import { TextZoom } from "@marcom/ac-accessibility";
 
 import { TextZoomContext } from "./TextZoomContext";
 
@@ -30,7 +30,7 @@ export function TextZoomContexProvider({
 
     window.addEventListener("resize:text-zoom", onZoom);
 
-    TextZoom.detect();
+    // TextZoom.detect();
 
     return () => {
       window.removeEventListener("resize:text-zoom", onZoom);

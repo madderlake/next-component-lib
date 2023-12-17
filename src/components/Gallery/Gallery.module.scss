@@ -1,0 +1,102 @@
+@use "sass:math";
+@import "../../styles/shared/core";
+
+$overflow-buffer-end-lg: 48px;
+$overflow-buffer-end-md: 44px;
+$overflow-buffer-end-sm: 40px;
+$overflow-buffer-start: 10px;
+
+.gallery {
+  z-index: 1;
+  position: relative;
+  margin: 0;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.scrollContainer {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: inherit;
+  padding-block-end: $overflow-buffer-end-lg;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding-block-start: $overflow-buffer-start;
+  margin-block-start: -$overflow-buffer-start;
+  scroll-behavior: smooth;
+
+  @include viewport(medium) {
+    padding-block-end: $overflow-buffer-end-md;
+  }
+
+  @include viewport(small) {
+    padding-block-end: $overflow-buffer-end-sm;
+  }
+}
+
+.itemContainer {
+  grid-column: content;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tile-card-gutter);
+
+  [dir="ltr"] & {
+    @each $viewport in viewport-list(default) {
+      @include viewport($viewport) {
+        $half-content-width: math.div(
+          map-get(viewport-get($viewport), content),
+          2
+        );
+        --offset: calc(50vw - #{$half-content-width});
+        padding-inline-end: var(--offset);
+      }
+    }
+  }
+}
+
+.galleryItem {
+  scroll-snap-align: start;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+
+  // 30 is arbitrarily large number that should
+  // account for *all* of our galleries.
+  // Alternatively we could apply these styles in JS
+  @for $i from 1 through 30 {
+    &:nth-of-type(#{$i}) {
+      z-index: #{30 - $i};
+      @each $viewport in viewport-list(default) {
+        @include viewport($viewport) {
+          $half-content-width: math.div(
+            map-get(viewport-get($viewport), content),
+            2
+          );
+          --offset: calc(
+            50vw -
+              min(#{$half-content-width}, #{math.div($viewport-max-width, 2)})
+          );
+          padding-inline-start: var(--offset);
+          --dir: -1;
+          $translateX: translateX(
+            calc(#{($i - 1)} * var(--dir) * var(--offset))
+          );
+          transform: $translateX;
+
+          [dir="rtl"] & {
+            --dir: 1;
+            transform: $translateX;
+          }
+        }
+      }
+    }
+  }
+}
+
+.paddleNav {
+  &.hidePaddles {
+    display: none;
+  }
+}
