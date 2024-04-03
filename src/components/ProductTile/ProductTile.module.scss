@@ -1,7 +1,7 @@
 @use "sass:math";
-@use "ac-sasskit/modules/button/core" as btn;
-@use "ac-sasskit/core/typography";
-@import "styles/shared/_core";
+// @use "ac-sasskit/modules/button/core" as btn;
+// @use "ac-sasskit/core/typography";
+@import "../../styles/shared/_core";
 
 $tile-width: (
   "xlarge": 405,
@@ -14,30 +14,30 @@ $tile-width: (
 $tile-dark-text-color: swatch(glyph-gray, dark);
 
 .productTile {
-  @include css-grouped(
-    (
-      x-large: (
-        width: 405px,
-        min-height: 623px,
-      ),
-      large: (
-        width: 372px,
-        min-height: 590px,
-      ),
-      medium: (
-        width: 344px,
-        min-height: 558px,
-      ),
-      small: (
-        width: 304px,
-        min-height: 469px,
-      ),
-      x-small: (
-        width: 260px,
-        min-height: 425px,
-      ),
-    )
-  );
+  // @include css-grouped(
+  //   (
+  //     x-large: (
+  //       width: 405px,
+  //       min-height: 623px,
+  //     ),
+  //     large: (
+  //       width: 372px,
+  //       min-height: 590px,
+  //     ),
+  //     medium: (
+  //       width: 344px,
+  //       min-height: 558px,
+  //     ),
+  //     small: (
+  //       width: 304px,
+  //       min-height: 469px,
+  //     ),
+  //     x-small: (
+  //       width: 260px,
+  //       min-height: 425px,
+  //     ),
+  //   )
+  // );
 
   &:hover {
     transform: none;
@@ -87,19 +87,19 @@ $tile-dark-text-color: swatch(glyph-gray, dark);
   text-align: center;
   display: grid;
 
-  @include css-grouped(
-    (
-      large: (
-        padding: 0 28px,
-      ),
-      medium: (
-        padding: 0 24px,
-      ),
-      small: (
-        padding: 0,
-      ),
-    )
-  );
+  // @include css-grouped(
+  //   (
+  //     large: (
+  //       padding: 0 28px,
+  //     ),
+  //     medium: (
+  //       padding: 0 24px,
+  //     ),
+  //     small: (
+  //       padding: 0,
+  //     ),
+  //   )
+  // );
 
   @include viewport(small) {
     text-align: start;
@@ -192,17 +192,17 @@ $tile-dark-text-color: swatch(glyph-gray, dark);
 }
 
 .button {
-  @include btn.button;
-  @include btn.button-variant-secondary-neutral;
+  // @include btn.button;
+  // @include btn.button-variant-secondary-neutral;
 
   text-decoration: none;
 
   @include viewport("range:medium up") {
-    @include btn.button-variant-elevated;
+    // @include btn.button-variant-elevated;
   }
 
   @include viewport(small) {
-    @include typography.typespec(14_18);
+    // @include typography.typespec(14_18);
     padding-top: 9px;
     padding-bottom: 9px;
   }
