@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 
 import { Badge } from "@/components/Badge/Badge";
 import { BaseLink } from "@/components/BaseLink/BaseLink";
