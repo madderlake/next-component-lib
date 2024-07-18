@@ -12,7 +12,6 @@ import { ResponsivePicture } from "@/components/ResponsivePicture/ResponsivePict
 import { LoadImagesContext } from "@/contexts/LoadImages/LoadImagesContext";
 import typographyStyles from "@/styles/shared/typography.module.scss";
 import type { ThemeProps } from "@/types/theme";
-
 import styles from "./ProductTile.module.scss";
 
 type GhostButtonProps = Omit<MarcomLinkProps, "className">;
@@ -88,7 +87,7 @@ export function ProductTile({
       className={classnames(
         styles.productTile,
         theme === "dark" && styles.darkTheme,
-        className
+        className,
       )}
     >
       <BaseLink
@@ -110,7 +109,7 @@ export function ProductTile({
               styles.optionalElementsGrid,
               collapseIndicators && styles.collapsedIndicators,
               collapseBadges && styles.collapsedBadges,
-              collapseSubheads && styles.collapsedSubheads
+              collapseSubheads && styles.collapsedSubheads,
             )}
           >
             {colorItems !== undefined && colorItems.length > 0 && (
@@ -139,7 +138,7 @@ export function ProductTile({
               <span
                 className={classnames(
                   typographyStyles.bodyCopySemibold,
-                  styles.subHeading
+                  styles.subHeading,
                 )}
               >
                 {subHeading}

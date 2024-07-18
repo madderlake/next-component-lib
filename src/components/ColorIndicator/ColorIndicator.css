@@ -3,6 +3,7 @@
 
 .colorindicator-items {
   width: auto;
+  padding: 0;
 }
 .colorindicator-item {
   height: 14px;
@@ -16,7 +17,12 @@
 }
 
 .colorindicator-label {
-  font-family: SF Pro Text, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family:
+    SF Pro Text,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: small;
   vertical-align: text-top;
 }

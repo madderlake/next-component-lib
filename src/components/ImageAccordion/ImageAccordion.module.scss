@@ -1,4 +1,4 @@
-@import "styles/shared/core";
+@import "../../styles/shared/_core";
 
 $container-border-radius: (
   "large": 28px,
@@ -31,15 +31,15 @@ $container-border-radius: (
   &:focus {
     outline: none;
 
-    &:after {
-      @include focus-outline;
-    }
+    // &:after {
+    //   @include focus-outline;
+    // }
 
-    @include focus-mouse-selector {
-      &:after {
-        outline: none;
-      }
-    }
+    // @include focus-mouse-selector {
+    //   &:after {
+    //     outline: none;
+    //   }
+    // }
   }
 
   &:after {

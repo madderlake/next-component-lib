@@ -2,20 +2,21 @@ import type { Meta, StoryFn } from "@storybook/react";
 import React, { useState } from "react";
 
 import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
-
+import { DefaultContexts } from "../../stories/components/DefaultContexts";
 import type {
   ResponsivePictureImageProps,
   ResponsivePictureProps,
 } from "./ResponsivePicture";
 import { ResponsivePicture } from "./ResponsivePicture";
+import { sassData } from "@/contexts/Viewport/sassData";
 
-const sassData = {
-  viewports: `'{"large":{"min-width":1069,"max-width":1440,"content":980},"xlarge":{"min-width":1441,"content":980},"medium":{"min-width":735,"max-width":1068,"content":692},"small":{"min-width":320,"max-width":734,"content":280},"range:large only":{"content":980,"min-width":1069,"max-width":1440,"query":"(min-width: 1069px) and (max-width: 1440px)"},"range:xlarge only":{"content":980,"min-width":1441,"query":"(min-width: 1441px)"},"range:medium only":{"content":692,"min-width":735,"max-width":1068,"query":"(min-width: 735px) and (max-width: 1068px)"},"range:small only":{"content":280,"min-width":320,"max-width":734,"query":"(min-width: 320px) and (max-width: 734px)"},"range:large up":{"content":980,"min-width":1069,"query":"(min-width: 1069px)"},"range:xlarge up":{"content":980,"min-width":1441,"query":"(min-width: 1441px)"},"range:medium up":{"content":692,"min-width":735,"query":"(min-width: 735px)"},"range:small up":{"content":280,"min-width":320,"query":"(min-width: 320px)"},"range:large down":{"content":980,"max-width":1440,"query":"(max-width: 1440px)"},"range:xlarge down":{"content":980},"range:medium down":{"content":692,"max-width":1068,"query":"(max-width: 1068px)"},"range:small down":{"content":280,"max-width":734,"query":"(max-width: 734px)"}}'`,
-  portrait: `'"(orientation: portrait)"'`,
-  landscape: `'"(orientation: landscape)"'`,
-  "inverted-colors": `'"(inverted-colors)"'`,
-  retina: '"(min-resolution: 1.5dppx)", "(min-resolution: 144dpi)"',
-};
+// const sassData = {
+//   viewports: `'{"large":{"min-width":1069,"max-width":1440,"content":980},"xlarge":{"min-width":1441,"content":980},"medium":{"min-width":735,"max-width":1068,"content":692},"small":{"min-width":320,"max-width":734,"content":280},"range:large only":{"content":980,"min-width":1069,"max-width":1440,"query":"(min-width: 1069px) and (max-width: 1440px)"},"range:xlarge only":{"content":980,"min-width":1441,"query":"(min-width: 1441px)"},"range:medium only":{"content":692,"min-width":735,"max-width":1068,"query":"(min-width: 735px) and (max-width: 1068px)"},"range:small only":{"content":280,"min-width":320,"max-width":734,"query":"(min-width: 320px) and (max-width: 734px)"},"range:large up":{"content":980,"min-width":1069,"query":"(min-width: 1069px)"},"range:xlarge up":{"content":980,"min-width":1441,"query":"(min-width: 1441px)"},"range:medium up":{"content":692,"min-width":735,"query":"(min-width: 735px)"},"range:small up":{"content":280,"min-width":320,"query":"(min-width: 320px)"},"range:large down":{"content":980,"max-width":1440,"query":"(max-width: 1440px)"},"range:xlarge down":{"content":980},"range:medium down":{"content":692,"max-width":1068,"query":"(max-width: 1068px)"},"range:small down":{"content":280,"max-width":734,"query":"(max-width: 734px)"}}'`,
+//   portrait: `'"(orientation: portrait)"'`,
+//   landscape: `'"(orientation: landscape)"'`,
+//   "inverted-colors": `'"(inverted-colors)"'`,
+//   retina: '"(min-resolution: 1.5dppx)", "(min-resolution: 144dpi)"',
+// };
 
 const TED_LASSO_IMAGES: ResponsivePictureImageProps[] = [
   {
@@ -65,7 +66,8 @@ const BasicTemplate: StoryFn<ResponsivePictureStoryProps> = (args) => {
   );
 };
 
-export const BasicExample: StoryFn<ResponsivePictureStoryProps> = BasicTemplate.bind({});
+export const BasicExample: StoryFn<ResponsivePictureStoryProps> =
+  BasicTemplate.bind({});
 BasicExample.storyName = "Basic Example";
 BasicExample.args = {
   storyLabel:
@@ -77,24 +79,27 @@ const LayoutTemplate: StoryFn<ResponsivePictureStoryProps> = (args) => {
   const { storyLabel, ...restOfArgs } = args;
 
   return (
-    <SassKitViewportsProvider sassData={sassData}>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "1rem 2rem",
-        }}
-      >
-        <StoryLabel text={storyLabel} />
-        <ResponsivePicture {...restOfArgs} />
-      </div>
-    </SassKitViewportsProvider>
+    <DefaultContexts>
+      <SassKitViewportsProvider sassData={sassData}>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "1rem 2rem",
+          }}
+        >
+          <StoryLabel text={storyLabel} />
+          <ResponsivePicture {...restOfArgs} />
+        </div>
+      </SassKitViewportsProvider>
+    </DefaultContexts>
   );
 };
 
-export const LayoutExample: StoryFn<ResponsivePictureStoryProps> = LayoutTemplate.bind({});
+export const LayoutExample: StoryFn<ResponsivePictureStoryProps> =
+  LayoutTemplate.bind({});
 LayoutExample.storyName = `Layout "fill" Example`;
 LayoutExample.args = {
   storyLabel:
@@ -167,7 +172,8 @@ const PreventLoadingTemplate: StoryFn<ResponsivePictureStoryProps> = (args) => {
   );
 };
 
-export const PreventLoadingExample: StoryFn<ResponsivePictureStoryProps> = PreventLoadingTemplate.bind({});
+export const PreventLoadingExample: StoryFn<ResponsivePictureStoryProps> =
+  PreventLoadingTemplate.bind({});
 PreventLoadingExample.storyName = `preventLoading Example`;
 PreventLoadingExample.args = {
   storyLabel: `You can delay loading of your images using "preventLoading=true" and
@@ -199,7 +205,8 @@ const PropsTemplate: StoryFn<ResponsivePictureStoryProps> = (args) => {
   );
 };
 
-export const ObjectFitExample: StoryFn<ResponsivePictureStoryProps> = PropsTemplate.bind({});
+export const ObjectFitExample: StoryFn<ResponsivePictureStoryProps> =
+  PropsTemplate.bind({});
 ObjectFitExample.storyName = "ObjectFit Example";
 ObjectFitExample.args = {
   storyLabel:
@@ -223,7 +230,8 @@ ObjectFitExample.argTypes = {
   },
 };
 
-export const ObjectPositionExample: StoryFn<ResponsivePictureStoryProps> = PropsTemplate.bind({});
+export const ObjectPositionExample: StoryFn<ResponsivePictureStoryProps> =
+  PropsTemplate.bind({});
 ObjectPositionExample.storyName = "ObjectPosition Example";
 ObjectPositionExample.args = {
   storyLabel: `objectPosition is a css property that allows you to set the anchor point of the image within its bounding box. This allows you to choose where on the image scaling should occur with layout:"fill" as well as general offset values.`,
@@ -242,7 +250,8 @@ ObjectPositionExample.argTypes = {
   },
 };
 
-export const ViewportSpecificPropsExample: StoryFn<ResponsivePictureStoryProps> = PropsTemplate.bind({});
+export const ViewportSpecificPropsExample: StoryFn<ResponsivePictureStoryProps> =
+  PropsTemplate.bind({});
 ViewportSpecificPropsExample.storyName = `Viewport-Specific Props Example`;
 ViewportSpecificPropsExample.args = {
   storyLabel: `ResponsivePicture allows viewport-specific setting of each of its props to allow things like having layout:"fill" for small viewports, and layout: "sized" for large and medium. "layout", "objectFit", and "objectPosition" all can be set up for viewport-specific values.`,
@@ -257,7 +266,8 @@ ViewportSpecificPropsExample.args = {
   },
 };
 
-export const AdditionalClassNamesExample: StoryFn<ResponsivePictureStoryProps> = PreventLoadingTemplate.bind({});
+export const AdditionalClassNamesExample: StoryFn<ResponsivePictureStoryProps> =
+  PreventLoadingTemplate.bind({});
 AdditionalClassNamesExample.storyName = `Additional Classes Example`;
 AdditionalClassNamesExample.args = {
   storyLabel: `Many additional classNames may be passed as props which will be applied during state changes as needed.`,

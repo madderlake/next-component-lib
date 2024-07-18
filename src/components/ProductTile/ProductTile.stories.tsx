@@ -3,12 +3,10 @@ import React from "react";
 
 import type { ColorIndicatorProps } from "@/components/ColorIndicator/ColorIndicator";
 import { LoadImagesProvider } from "@/contexts/LoadImages/LoadImagesProvider";
-// import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
-import sassData from "@/styles/shared/sasskitData.module.scss";
-
 import { IMAGE_DATA } from "./imageData";
 import type { ProductTileProps } from "./ProductTile";
 import { ProductTile } from "./ProductTile";
+import { DefaultContexts } from "src/stories/components/DefaultContexts";
 
 export default {
   title: "components/ProductTile",
@@ -62,8 +60,7 @@ const Template: StoryFn<ProductTileProps> = (args) => {
   const containerRef = React.useRef(null);
 
   return (
-    // <SassKitViewportsProvider sassData={sassData}>
-    <LoadImagesProvider containerRef={containerRef}>
+    <DefaultContexts>
       <div
         ref={containerRef}
         style={{
@@ -74,10 +71,11 @@ const Template: StoryFn<ProductTileProps> = (args) => {
           justifyContent: "center",
         }}
       >
-        <ProductTile {...args} />
+        <LoadImagesProvider containerRef={containerRef}>
+          <ProductTile {...args} />
+        </LoadImagesProvider>
       </div>
-    </LoadImagesProvider>
-    // </SassKitViewportsProvider>
+    </DefaultContexts>
   );
 };
 

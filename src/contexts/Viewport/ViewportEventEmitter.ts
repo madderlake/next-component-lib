@@ -1,5 +1,6 @@
 // import EventEmitterMicro from "@marcom/ac-event-emitter-micro";
-
+import EventEmitter from "eventemitter3";
+console.log(new EventEmitter());
 import type {
   RangeViewport,
   RangeViewportsObject,
@@ -88,7 +89,7 @@ class ViewportEventEmitter {
   };
 
   public getCurrentScreenPropValue = (
-    screenPropName: string
+    screenPropName: string,
   ): boolean | null => {
     if (
       this.mediaQueriesInitialized &&
@@ -117,7 +118,7 @@ class ViewportEventEmitter {
     let orderedViewports = this.viewportsOrder;
     if (viewportNames !== undefined) {
       orderedViewports = orderedViewports.filter((vp) =>
-        viewportNames.includes(vp)
+        viewportNames.includes(vp),
       );
     }
 
@@ -130,7 +131,7 @@ class ViewportEventEmitter {
 
   public onViewport = (
     viewportName: string,
-    callback: EEViewportCallback
+    callback: EEViewportCallback,
   ): boolean => {
     if (!this._hasViewport(viewportName)) {
       return false;
@@ -143,7 +144,7 @@ class ViewportEventEmitter {
 
   public onScreenProp = (
     screenPropName: string,
-    callback: EEScreenPropCallback
+    callback: EEScreenPropCallback,
   ): boolean => {
     if (!this.activeScreenPropValues.has(screenPropName)) {
       return false;
@@ -157,7 +158,7 @@ class ViewportEventEmitter {
 
   public offViewport = (
     viewportName: string,
-    callback?: EEViewportCallback
+    callback?: EEViewportCallback,
   ): boolean => {
     if (!this._hasViewport(viewportName)) {
       return false;
@@ -170,7 +171,7 @@ class ViewportEventEmitter {
 
   public offScreenProp = (
     screenPropName: string,
-    callback?: EEScreenPropCallback
+    callback?: EEScreenPropCallback,
   ): boolean => {
     if (!this.activeScreenPropValues.has(screenPropName)) {
       return false;
@@ -231,7 +232,7 @@ class ViewportEventEmitter {
   private _getRangeViewportsForIndex(
     viewportIdx: number,
     viewportsLen: number,
-    viewportName: ViewportName
+    viewportName: ViewportName,
   ): RangeViewport[] {
     const rangeViewports = [this.rangeViewports[`range:${viewportName} only`]];
 
@@ -260,7 +261,7 @@ class ViewportEventEmitter {
         const rangeViewports = this._getRangeViewportsForIndex(
           i,
           orderedViewports.length,
-          vpName
+          vpName,
         );
 
         for (const rangeViewport of rangeViewports) {
@@ -346,7 +347,7 @@ class ViewportEventEmitter {
 
   private _handleScreenPropMediaQueryChange(
     screenPropName: string,
-    matches: boolean
+    matches: boolean,
   ): void {
     if (this.activeScreenPropValues.get(screenPropName) !== matches) {
       this.activeScreenPropValues.set(screenPropName, matches);
@@ -357,7 +358,7 @@ class ViewportEventEmitter {
   }
 
   private _getViewportForRangeViewport(
-    rangeViewport: RangeViewport
+    rangeViewport: RangeViewport,
   ): Viewport | null {
     return this.viewports[rangeViewport.viewport] ?? null;
   }
