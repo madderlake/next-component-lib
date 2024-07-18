@@ -171,7 +171,7 @@ $tile-dark-text-color: swatch(glyph-gray, dark);
   // @include btn.button-variant-secondary-neutral;
 
   text-decoration: none;
-  color: red;
+
   @include viewport("range:medium up") {
     // @include btn.button-variant-elevated;
   }
