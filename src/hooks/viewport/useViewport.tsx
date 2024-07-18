@@ -19,6 +19,7 @@ export const useViewport: UseViewport = (viewportProps) => {
   // Get the list of viewports, events, and getters from the ViewportsContext
   const { viewports, events, getters } =
     useContext<ViewportContextValue>(ViewportContext);
+
   // Get the functions to bind on/off for events
   const { onViewport, offViewport } = events;
   // Get the functions that allow getting computed data from the ViewportsContext
@@ -28,7 +29,7 @@ export const useViewport: UseViewport = (viewportProps) => {
   // Memoize the value of all of the available viewports by name in order
   const allOrderedViewportNames = useMemo(
     () => getOrderedViewports(Object.keys(viewports)),
-    [viewports, getOrderedViewports]
+    [viewports, getOrderedViewports],
   );
 
   // Memoize the value of an ordered list of the viewports watched by the hook

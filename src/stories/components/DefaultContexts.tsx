@@ -9,7 +9,7 @@ import { useQueryStringAdapterMock } from "@/layouts/utils/useQueryStringAdapter
 
 // import sassData from "@/styles/shared/sasskitData.module.scss";
 
-import { sassData } from "@/contexts/Viewport/SassKitViewportsProvider";
+import { sassData } from "@/contexts/Viewport/sassData";
 
 export function DefaultContexts({
   children,

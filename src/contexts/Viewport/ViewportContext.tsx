@@ -16,7 +16,7 @@ import type {
 
 export type ViewportContextListenerCallback = (
   viewportName: string,
-  callback: EEViewportCallback
+  callback: EEViewportCallback,
 ) => void;
 
 export interface ViewportContextEvents {
@@ -25,11 +25,11 @@ export interface ViewportContextEvents {
   offViewport: ViewportContextListenerCallback;
   onScreenProp: (
     screenPropName: ScreenPropKeys,
-    callback: EEScreenPropCallback
+    callback: EEScreenPropCallback,
   ) => void;
   offScreenProp: (
     screenPropName: ScreenPropKeys,
-    callback: EEScreenPropCallback
+    callback: EEScreenPropCallback,
   ) => void;
 }
 
@@ -74,5 +74,5 @@ export const ViewportContextDefaultValue: ViewportContextValue = {
 };
 
 export const ViewportContext = React.createContext<ViewportContextValue>(
-  ViewportContextDefaultValue
+  ViewportContextDefaultValue,
 );

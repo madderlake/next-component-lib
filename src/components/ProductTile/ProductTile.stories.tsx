@@ -3,12 +3,10 @@ import React from "react";
 
 import type { ColorIndicatorProps } from "@/components/ColorIndicator/ColorIndicator";
 import { LoadImagesProvider } from "@/contexts/LoadImages/LoadImagesProvider";
-// import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
-import sassData from "@/styles/shared/sasskitData.module.scss";
-
 import { IMAGE_DATA } from "./imageData";
 import type { ProductTileProps } from "./ProductTile";
 import { ProductTile } from "./ProductTile";
+import { DefaultContexts } from "src/stories/components/DefaultContexts";
 
 export default {
   title: "components/ProductTile",
@@ -62,22 +60,22 @@ const Template: StoryFn<ProductTileProps> = (args) => {
   const containerRef = React.useRef(null);
 
   return (
-    // <SassKitViewportsProvider sassData={sassData}>
-    <LoadImagesProvider containerRef={containerRef}>
-      <div
-        ref={containerRef}
-        style={{
-          paddingTop: "2rem",
-          height: "100vh",
-          backgroundColor: args.theme === "light" ? "#F5F5F7" : "#000",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <ProductTile {...args} />
-      </div>
-    </LoadImagesProvider>
-    // </SassKitViewportsProvider>
+    <DefaultContexts>
+      <LoadImagesProvider containerRef={containerRef}>
+        <div
+          ref={containerRef}
+          style={{
+            paddingTop: "2rem",
+            height: "100vh",
+            backgroundColor: args.theme === "light" ? "#F5F5F7" : "#000",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <ProductTile {...args} />
+        </div>
+      </LoadImagesProvider>
+    </DefaultContexts>
   );
 };
 
@@ -92,9 +90,9 @@ InteractiveExample.argTypes = {
   collapseIndicators: { table: { disable: true } },
 };
 
-InteractiveExample.parameters = {
-  specUrl:
-    "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/product-tile/",
-  sourceCodeUrl:
-    "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/ProductTile",
-};
+// InteractiveExample.parameters = {
+//   specUrl:
+//     "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/product-tile/",
+//   sourceCodeUrl:
+//     "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/ProductTile",
+// };

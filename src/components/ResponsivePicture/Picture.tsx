@@ -52,7 +52,7 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
       objectPosition,
       ...rest
     },
-    ref
+    ref,
   ): JSX.Element => {
     const pictureRef = useRef<HTMLPictureElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
@@ -92,20 +92,20 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
               <source
                 key={sourceKey}
                 srcSet={srcset}
-                width={srcWidth}
-                height={srcHeight}
+                // width={srcWidth}
+                // height={srcHeight}
                 media={media}
               />
             );
-          }
+          },
         )}
         <img
           ref={imgRef}
           className={imgClassName}
           alt={alt}
-          width={width}
-          height={height}
-          src={src}
+          // width={width}
+          // height={height}
+          src={imgRef.current?.currentSrc}
           onLoadStart={onLoadStart}
           onLoad={onLoad}
           onError={onError}
@@ -115,7 +115,7 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
         {children}
       </picture>
     );
-  }
+  },
 );
 
 // eslint seems to require this with forwardRef

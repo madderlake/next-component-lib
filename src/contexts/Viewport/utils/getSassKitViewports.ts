@@ -23,12 +23,12 @@ const getViewportSortValue = (viewport: Viewport): number =>
 const addSortedViewportToArr = (
   viewport: Viewport,
   arr: ViewportName[],
-  viewportCache: Viewport[]
+  viewportCache: Viewport[],
 ): void => {
   const insertionIdx = sortedIndexBy(
     viewportCache,
     viewport,
-    getViewportSortValue
+    getViewportSortValue,
   );
   arr.splice(insertionIdx, 0, viewport.name);
   viewportCache.splice(insertionIdx, 0, viewport);
@@ -41,7 +41,7 @@ const getViewportNameFromRangeViewport = (name: string): string => {
 const populateSettings = (
   name: string,
   rawViewport: RawSassKitViewport,
-  isRangeViewport: boolean
+  isRangeViewport: boolean,
 ): ViewportSettings | RangeViewportSettings => {
   const settings: Partial<ViewportSettings> | Partial<RangeViewportSettings> =
     {};
@@ -69,10 +69,9 @@ interface SassKitViewports {
 
 // Parses the raw SassKit viewports data from Sass exports and turns them into well-formed typed objects
 export const getSassKitViewports = (
-  sassViewportsStr: string
+  sassViewportsStr: string,
 ): SassKitViewports => {
   const deserializedViewports = JSON.parse(sassViewportsStr);
-  console.log(deserializedViewports);
   const sassObj = deserializedViewports as {
     [key: string]: RawSassKitViewport;
   };
@@ -106,7 +105,7 @@ export const getSassKitViewports = (
         addSortedViewportToArr(
           viewport,
           result.viewportsOrder,
-          orderedViewportsCache
+          orderedViewportsCache,
         );
       }
     }

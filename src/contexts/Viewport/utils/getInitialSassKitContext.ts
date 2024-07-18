@@ -17,7 +17,7 @@ export interface InitialSassKitContext {
 }
 
 export const getInitialSassKitContext = (
-  sassData: SerializedSassData
+  sassData: SerializedSassData,
 ): InitialSassKitContext => {
   const { viewports: skViewports, ...skScreenProps } = sassData;
   // Get viewports Data

@@ -1,11 +1,12 @@
-import type{ Preview, StoryFn, StoryContext } from '@storybook/react';
-import React from 'react';
+import type { Preview, StoryFn, StoryContext } from "@storybook/react";
+import React from "react";
+import "./global.css";
 const getDirection = (context: StoryContext) => {
   return context.globals.direction;
 };
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -16,23 +17,26 @@ const preview: Preview = {
   decorators: [dirDecorator],
   globalTypes: {
     direction: {
-    name: "Direction",
-    description: "Display direction in which contented is displayed",
-    defaultValue: "ltr",
-    toolbar: {
-      items: [{ value: "ltr", title: "LTR", icon: "arrowleftalt" }, { value: "rtl", title: "RTL", icon: "arrowrightalt" }],
-      showName: true,
-    }
-  }
-  }
+      name: "Direction",
+      description: "Display direction in which contented is displayed",
+      defaultValue: "ltr",
+      toolbar: {
+        items: [
+          { value: "ltr", title: "LTR", icon: "arrowleftalt" },
+          { value: "rtl", title: "RTL", icon: "arrowrightalt" },
+        ],
+        showName: true,
+      },
+    },
+  },
+};
+
+export function dirDecorator(Story: StoryFn, context: StoryContext) {
+  return (
+    <div dir={getDirection(context)}>
+      <Story {...context} />
+    </div>
+  );
 }
 
-export function dirDecorator(Story: StoryFn, context: StoryContext){
-   return ( <div  dir={getDirection(context)}>
-      <Story {...context} />
-    </div>)
-  }
-
-
-
-export default preview
+export default preview;

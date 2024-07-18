@@ -112,7 +112,7 @@ const ResponsivePictureComponent = forwardRef<
       preventLoading = false,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const containerRef = useRef<HTMLElement>(null);
     const pictureRef = useRef<PictureRefType>(null);
@@ -130,19 +130,6 @@ const ResponsivePictureComponent = forwardRef<
     const isHydrated = useContext(HydrationContext);
     const { viewportsOrder, viewports, rangeViewports } =
       useContext(ViewportContext);
-
-    // Allow container, picture, and img refs to be used
-    useImperativeHandle(ref, () => ({
-      get container() {
-        return containerRef.current;
-      },
-      get picture() {
-        return pictureRef.current?.picture ?? null;
-      },
-      get img() {
-        return pictureRef.current?.img ?? null;
-      },
-    }));
 
     // Get the picture tag image data and the styles used at each media query
     const {
@@ -240,7 +227,7 @@ const ResponsivePictureComponent = forwardRef<
         ) : null}
       </Tag>
     );
-  }
+  },
 );
 
 ResponsivePictureComponent.displayName = "ResponsivePicture";
