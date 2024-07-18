@@ -12,7 +12,6 @@ import { ResponsivePicture } from "@/components/ResponsivePicture/ResponsivePict
 import { LoadImagesContext } from "@/contexts/LoadImages/LoadImagesContext";
 import typographyStyles from "@/styles/shared/typography.module.scss";
 import type { ThemeProps } from "@/types/theme";
-import { LoadImagesProvider } from "@/contexts/LoadImages/LoadImagesProvider";
 import styles from "./ProductTile.module.scss";
 
 type GhostButtonProps = Omit<MarcomLinkProps, "className">;
@@ -97,20 +96,14 @@ export function ProductTile({
         {...primaryCTA.analytics}
         className={styles.contentLink}
       >
-        <LoadImagesProvider containerRef={containerRef}>
-          <div
-            className={classnames(styles.productImage)}
-            {...rest}
-            ref={containerRef}
-          >
-            <ResponsivePicture
-              images={images}
-              layout={layout}
-              alt={imageAltText}
-              preventLoading={!useContext(LoadImagesContext)}
-            />
-          </div>
-        </LoadImagesProvider>
+        <div className={classnames(styles.productImage)} {...rest}>
+          <ResponsivePicture
+            images={images}
+            layout={layout}
+            alt={imageAltText}
+            preventLoading={!useContext(LoadImagesContext)}
+          />
+        </div>
         <div className={classnames(styles.contentGrid)}>
           <div
             className={classnames(

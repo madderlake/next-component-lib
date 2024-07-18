@@ -61,20 +61,20 @@ const Template: StoryFn<ProductTileProps> = (args) => {
 
   return (
     <DefaultContexts>
-      <LoadImagesProvider containerRef={containerRef}>
-        <div
-          ref={containerRef}
-          style={{
-            paddingTop: "2rem",
-            height: "100vh",
-            backgroundColor: args.theme === "light" ? "#F5F5F7" : "#000",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+      <div
+        ref={containerRef}
+        style={{
+          paddingTop: "2rem",
+          height: "100vh",
+          backgroundColor: args.theme === "light" ? "#F5F5F7" : "#000",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <LoadImagesProvider containerRef={containerRef}>
           <ProductTile {...args} />
-        </div>
-      </LoadImagesProvider>
+        </LoadImagesProvider>
+      </div>
     </DefaultContexts>
   );
 };
@@ -90,9 +90,9 @@ InteractiveExample.argTypes = {
   collapseIndicators: { table: { disable: true } },
 };
 
-// InteractiveExample.parameters = {
-//   specUrl:
-//     "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/product-tile/",
-//   sourceCodeUrl:
-//     "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/ProductTile",
-// };
+InteractiveExample.parameters = {
+  specUrl:
+    "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/product-tile/",
+  sourceCodeUrl:
+    "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/ProductTile",
+};

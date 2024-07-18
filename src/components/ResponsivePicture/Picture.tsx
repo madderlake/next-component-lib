@@ -40,7 +40,7 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
       alt = "",
       width,
       height,
-      src,
+      // src,
       className,
       imgClassName,
       sources = [],
@@ -58,14 +58,14 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
     const imgRef = useRef<HTMLImageElement>(null);
 
     // Allow both the picture and image element refs to be returned
-    useImperativeHandle(ref, () => ({
-      get picture() {
-        return pictureRef.current;
-      },
-      get img() {
-        return imgRef.current;
-      },
-    }));
+    // useImperativeHandle(ref, () => ({
+    //   get picture() {
+    //     return pictureRef.current;
+    //   },
+    //   get img() {
+    //     return imgRef.current;
+    //   },
+    // }));
 
     const inlineStyles = {
       objectPosition,
@@ -77,8 +77,8 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
           ({
             sourceKey,
             srcset,
-            width: srcWidth,
-            height: srcHeight,
+            // width: srcWidth,
+            // height: srcHeight,
             media,
           }) => {
             // Chrome supports locking the width and height to the source element

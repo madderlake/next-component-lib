@@ -114,7 +114,6 @@ const ResponsivePictureComponent = forwardRef<
     },
     ref,
   ) => {
-    const containerRef = useRef<HTMLElement>(null);
     const pictureRef = useRef<PictureRefType>(null);
     const shouldRenderImages = !preventLoading;
 
@@ -195,7 +194,6 @@ const ResponsivePictureComponent = forwardRef<
         {...viewportVarProps}
         style={containerStyle}
         as={Tag}
-        ref={containerRef}
         className={classnames(containerClass, className)}
       >
         <Picture
@@ -221,7 +219,7 @@ const ResponsivePictureComponent = forwardRef<
                   images,
                 }).pictureSources
               }
-              imgClassName={imgClassName}
+              imgClassName={"noscript"}
             />
           </noscript>
         ) : null}
