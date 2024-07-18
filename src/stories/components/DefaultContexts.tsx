@@ -6,9 +6,6 @@ import { TextZoomContexProvider } from "@/contexts/TextZoom/TextZoomProvider";
 import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
 import { WindowContextProvider } from "@/contexts/Window/WindowContextProvider";
 import { useQueryStringAdapterMock } from "@/layouts/utils/useQueryStringAdapterMock";
-
-// import sassData from "@/styles/shared/sasskitData.module.scss";
-
 import { sassData } from "@/contexts/Viewport/sassData";
 
 export function DefaultContexts({

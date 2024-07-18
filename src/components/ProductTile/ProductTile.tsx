@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { RefObject, useContext, useRef } from "react";
+import { useContext, useRef } from "react";
 
 import { Badge } from "@/components/Badge/Badge";
 import { BaseLink } from "@/components/BaseLink/BaseLink";
@@ -80,7 +80,6 @@ export function ProductTile({
   analytics,
   ...rest
 }: ProductTileProps): JSX.Element {
-  const containerRef = useRef(null);
   return (
     <div
       {...rest}
