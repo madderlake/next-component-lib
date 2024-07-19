@@ -36,10 +36,11 @@ $overflow-buffer-start: 10px;
 }
 
 .itemContainer {
+  --gallery-column-gap: 45px;
   grid-column: content;
   display: flex;
   align-items: flex-start;
-  gap: var(--tile-card-gutter);
+  gap: var(--gallery-column-gap);
 
   [dir="ltr"] & {
     @each $viewport in viewport-list(default) {
@@ -75,8 +76,10 @@ $overflow-buffer-start: 10px;
             2
           );
           --offset: calc(
-            50vw -
-              min(#{$half-content-width}, #{math.div($viewport-max-width, 2)})
+            50vw - min(
+                #{$half-content-width},
+                #{math.div($viewport-max-width, 2)}
+              )
           );
           padding-inline-start: var(--offset);
           --dir: -1;

@@ -32,13 +32,13 @@ export function Select({
 }: SelectProps): JSX.Element {
   const enhanced = useIsEnhanced();
   const collapseAllIndicators = items.every(
-    (item) => item.colorItems === undefined || item.colorItems.length === 0
+    (item) => item.colorItems === undefined || item.colorItems.length === 0,
   );
 
   const collapseAllBadges = items.every((item) => item.badge === undefined);
 
   const collapseAllSubheads = items.every(
-    (item) => item.subHeading === undefined
+    (item) => item.subHeading === undefined,
   );
 
   const sectionAnalytics = {
