@@ -1,6 +1,6 @@
 // import EventEmitterMicro from "@marcom/ac-event-emitter-micro";
 import EventEmitter from "eventemitter3";
-console.log(new EventEmitter());
+
 import type {
   RangeViewport,
   RangeViewportsObject,
