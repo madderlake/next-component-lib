@@ -45,6 +45,11 @@ $tile-dark-text-color: swatch(glyph-gray, dark);
   }
 
   figure {
+    @include viewport(small) {
+      margin-block-start: 0;
+      margin-inline-start: 0;
+    }
+
     @each $viewport, $width in $tile-width {
       @include viewport($viewport) {
         $tile-scale-value: math.div($width + 6, $width);
