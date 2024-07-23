@@ -19,6 +19,8 @@
   --sk-headline-plus-first-element-margin: 0.8em;
   --sk-headline-plus-headline-margin: 0.4em;
   --sk-paragraph-plus-headline-margin: 1.6em;
+  --global-section-background-color-alt: rgb(245, 245, 247);
+  --global-card-corner-radius: 28px;
 }
 
 html {
@@ -30,6 +32,13 @@ html {
     Arial,
     sans-serif;
   font-size: 106.25%;
+  font-family:
+    SF Pro Text,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
   quotes: "â€œ" "â€";
 }
 

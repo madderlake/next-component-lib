@@ -7,7 +7,7 @@ $container-border-radius: (
 );
 
 .accordionItem {
-  border-top: 1px swatch(fill-gray-tertiary) solid;
+  border-top: 1px var(--accordion-border-color) solid;
   overflow: hidden;
 
   &:first-child {
@@ -20,13 +20,15 @@ $container-border-radius: (
 }
 
 .accordionButton {
-  padding: 28px 0;
+  padding: 24px 0;
   letter-spacing: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   width: 100%;
+  background-color: transparent;
+  border: none;
 
   &:focus {
     outline: none;
@@ -55,6 +57,15 @@ $container-border-radius: (
 .accordionTitleText {
   max-width: column-width(12);
   text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  font-family:
+    SF Pro Display,
+    SF Pro Icons,
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 .accordionContent {
@@ -72,6 +83,16 @@ $container-border-radius: (
     margin-bottom: 16px;
     padding-right: 28px;
     padding-top: 0;
+    font-size: 17px;
+    line-height: 1.4705882353;
+    font-family:
+      SF Pro Text,
+      SF Pro Icons,
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    color: var(--sk-body-text-color);
 
     &:last-of-type {
       margin-bottom: 0;
@@ -98,6 +119,8 @@ $container-border-radius: (
 }
 
 .accordionIcon {
+  font-size: 20px;
+  color: var(--accordion-icon-color);
   align-items: center;
   color: swatch(glyph-gray-tertiary);
   display: flex;
@@ -114,26 +137,33 @@ $container-border-radius: (
 
 .accordionIconSvg {
   overflow: visible;
-  stroke-width: 2.75;
+  stroke-width: var(--accordion-icon-stroke-width);
   width: 1em;
 }
 
 .imageAccordionContainer {
+  border-radius: var(--global-card-corner-radius);
+  --accordion-side-padding: 90px;
+  --accordion-width: 350px;
+  --accordion-content-width: 323px;
   /* reset - sk overrides */
   p + *,
   ul + *,
   ol + * {
     margin-top: 0;
   }
-
+  padding: 0 67px;
   position: relative;
   z-index: 1;
-  background-color: swatch(fill-tertiary);
+  background-color: var(--global-section-background-color-alt);
   overflow: hidden;
   height: 784px;
   display: grid;
   // min/max of image container width per design specs
   grid-template-columns: auto minmax(451px, 1090px);
+  grid-template-columns:
+    calc(var(--accordion-width) + var(--accordion-side-padding) * 2)
+    1fr;
 
   @include viewport(medium) {
     display: flex;
@@ -158,6 +188,25 @@ $container-border-radius: (
 }
 
 .accordion {
+  --accordion-button-padding-top: 1em;
+  --accordion-button-padding-bottom: 1em;
+  --accordion-border-color: rgb(210, 210, 215);
+  --accordion-border-width: 1px;
+  --accordion-content-padding-top: 0;
+  --accordion-content-padding-bottom: 1em;
+  --accordion-content-paragraph-max-width: 83.3333333333%;
+  --accordion-content-paragraph-padding-top: 0;
+  --accordion-content-paragraph-padding-bottom: 0.8em;
+  --accordion-icon-color: rgb(134, 134, 139);
+  --accordion-icon-color-hover: rgb(110, 110, 115);
+  --accordion-icon-width: 1em;
+  --accordion-icon-height: auto;
+  --accordion-icon-stroke-width: 2.25;
+  --accordion-icon-svg-width: 1em;
+  --accordion-title-max-width: 83.3333333333%;
+  --accordion-transition-duration: 400ms;
+  margin: 0;
+  list-style: none;
   width: 350px;
   padding: 0 67px;
   justify-self: center;

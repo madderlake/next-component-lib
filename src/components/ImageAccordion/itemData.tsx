@@ -5,13 +5,7 @@ import { IMAGE_DATA } from "./imageData";
 
 export const items: ImageAccordionProps["items"] = [
   {
-    headline: (
-      <>
-        Start it on iPhone,
-        <br />
-        finish it on iPad.
-      </>
-    ),
+    headline: <>iPad and iPhone</>,
     content: (
       <>
         <p>
@@ -33,13 +27,7 @@ export const items: ImageAccordionProps["items"] = [
     },
   },
   {
-    headline: (
-      <>
-        Your dream workflow,
-        <br />
-        featuring Mac and iPad.
-      </>
-    ),
+    headline: <>iPad and Mac</>,
     content: (
       <>
         <p>
@@ -61,13 +49,7 @@ export const items: ImageAccordionProps["items"] = [
     },
   },
   {
-    headline: (
-      <>
-        Achieve your goals with
-        <br />
-        Apple Watch and iPad.
-      </>
-    ),
+    headline: <>iPad and Apple Watch</>,
     content: (
       <>
         <p>

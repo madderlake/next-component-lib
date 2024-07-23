@@ -28,8 +28,8 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/layouts/*": ["src/layouts/*"],
       "@/types/*": ["src/types/*"],
-      "@/lib/*": ["src/lib/*"]
-      // "@/fonts": ["src/styles/fonts"],
+      "@/lib/*": ["src/lib/*"],
+      "@/stories/*": ["src/stories/*"]
       // "@/fontassets/*": ["public/assets/fonts/*"]
     }
   },
