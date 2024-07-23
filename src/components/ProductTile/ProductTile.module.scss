@@ -143,7 +143,8 @@ $tile-dark-text-color: swatch(glyph-gray, dark);
 
 .copy {
   margin: 16px 0;
-
+  color: var(--sk-body-text-color);
+  letter-spacing: 0.022em;
   @include viewport(small) {
     margin: 12px 0;
   }
@@ -151,6 +152,9 @@ $tile-dark-text-color: swatch(glyph-gray, dark);
 
 .heading {
   grid-area: row3;
+  font-size: 28px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .subHeading {

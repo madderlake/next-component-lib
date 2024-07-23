@@ -35,10 +35,10 @@ const COLOR_ITEMS: ColorItems = {
     { type: "swatch", color: "#cc0000", name: "ProductRed" },
     { type: "swatch", color: "darkgrey", name: "Graphite" },
   ],
-  iPad_9gen: [
-    { type: "swatch", color: "lightgrey", name: "Silver" },
-    { type: "swatch", color: "darkgrey", name: "Graphite" },
-  ],
+  // iPad_9gen: [
+  //   { type: "swatch", color: "lightgrey", name: "Silver" },
+  //   { type: "swatch", color: "darkgrey", name: "Graphite" },
+  // ],
   iPad_10gen: [
     { type: "swatch", color: "lightgrey", name: "Silver" },
     { type: "swatch", color: "purple", name: "Purple" },
@@ -97,19 +97,19 @@ export const SELECT_MOMENT_PROPS: SelectProps = {
       },
       ...CTA_DATA,
     },
-    {
-      heading: "iPad",
-      subHeading: "9th Generation",
-      copy: "The essential iPad experience at an incredible value.",
-      pricing: "From $329 or $27.41/mo. for 12 mo.*",
-      images: Object.values(IMAGE_DATA.iPad_9gen),
-      colorItems: COLOR_ITEMS.iPad_9gen,
-      analytics: {
-        "data-analytics-activitymap-region-id": "ipad",
-        "data-analytics-gallery-item-id": "gallery-item-ipad-9",
-      },
-      ...CTA_DATA,
-    },
+    // {
+    //   heading: "iPad",
+    //   subHeading: "9th Generation",
+    //   copy: "The essential iPad experience at an incredible value.",
+    //   pricing: "From $329 or $27.41/mo. for 12 mo.*",
+    //   images: Object.values(IMAGE_DATA.iPad_9gen),
+    //   colorItems: COLOR_ITEMS.iPad_9gen,
+    //   analytics: {
+    //     "data-analytics-activitymap-region-id": "ipad",
+    //     "data-analytics-gallery-item-id": "gallery-item-ipad-9",
+    //   },
+    //   ...CTA_DATA,
+    // },
     {
       heading: "iPad",
       copy: "The essential iPad experience at an incredible value.",

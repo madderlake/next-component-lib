@@ -4,12 +4,12 @@ import localFont from "next/font/local";
 const sfText = localFont({
   src: [
     {
-      path: "./assets/fonts/SFProText-Regular.woff2",
+      path: "../public/fonts/SFProText-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./assets/fonts/SFProText-RegularItalic.woff2",
+      path: "../public/fonts/SFProText-RegularItalic.woff2",
       weight: "400",
       style: "italic",
     },
