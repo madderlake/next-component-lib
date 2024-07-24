@@ -40,7 +40,7 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
       alt = "",
       width,
       height,
-      // src,
+      src,
       className,
       imgClassName,
       sources = [],
@@ -57,15 +57,15 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
     const pictureRef = useRef<HTMLPictureElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
 
-    // Allow both the picture and image element refs to be returned
-    // useImperativeHandle(ref, () => ({
-    //   get picture() {
-    //     return pictureRef.current;
-    //   },
-    //   get img() {
-    //     return imgRef.current;
-    //   },
-    // }));
+    //Allow both the picture and image element refs to be returned
+    useImperativeHandle(ref, () => ({
+      get picture() {
+        return pictureRef.current;
+      },
+      get img() {
+        return imgRef.current;
+      },
+    }));
 
     const inlineStyles = {
       objectPosition,
@@ -77,8 +77,8 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
           ({
             sourceKey,
             srcset,
-            // width: srcWidth,
-            // height: srcHeight,
+            width: srcWidth,
+            height: srcHeight,
             media,
           }) => {
             // Chrome supports locking the width and height to the source element
@@ -92,8 +92,8 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
               <source
                 key={sourceKey}
                 srcSet={srcset}
-                // width={srcWidth}
-                // height={srcHeight}
+                width={srcWidth}
+                height={srcHeight}
                 media={media}
               />
             );
@@ -103,8 +103,8 @@ const PictureComponent = forwardRef<PictureRefType, PictureProps>(
           ref={imgRef}
           className={imgClassName}
           alt={alt}
-          // width={width}
-          // height={height}
+          width={width}
+          height={height}
           src={imgRef.current?.currentSrc}
           onLoadStart={onLoadStart}
           onLoad={onLoad}

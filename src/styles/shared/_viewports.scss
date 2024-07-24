@@ -17,7 +17,6 @@ $viewport-max-width: 1680px;
     content: 87.5vw,
   )
 );
-
 @include viewport-set(
   "large",
   (

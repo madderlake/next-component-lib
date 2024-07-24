@@ -1,11 +1,84 @@
 @import "../../styles/shared/_core";
-// @import "../../styles/shared/_viewports";
 
 $container-border-radius: (
   "large": 28px,
   "small": 24px,
   "xsmall": 20px,
 );
+
+.accordion {
+  --accordion-button-padding-top: 1em;
+  --accordion-button-padding-bottom: 1em;
+  --accordion-border-color: rgb(210, 210, 215);
+  --accordion-border-width: 1px;
+  --accordion-content-padding-top: 0;
+  --accordion-content-padding-bottom: 1em;
+  --accordion-content-paragraph-max-width: 83.3333333333%;
+  --accordion-content-paragraph-padding-top: 0;
+  --accordion-content-paragraph-padding-bottom: 0.8em;
+  --accordion-icon-color: rgb(134, 134, 139);
+  --accordion-icon-color-hover: rgb(110, 110, 115);
+  --accordion-icon-width: 1em;
+  --accordion-icon-height: auto;
+  --accordion-icon-stroke-width: 2.25;
+  --accordion-icon-svg-width: 1em;
+  --accordion-title-max-width: 83.3333333333%;
+  --accordion-transition-duration: 400ms;
+  margin: 0;
+  list-style: none;
+  width: 350px;
+  padding: 0 67px;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+
+  @include viewport(medium) {
+    width: 535px;
+    height: max-content;
+    padding: 88px 46px;
+  }
+
+  @include viewport(small) {
+    width: 361px;
+    padding: 56px 30px;
+  }
+  @include viewport(xsmall) {
+    width: 240px;
+    padding: 30px 20px;
+  }
+
+  @include viewport("range:large up") {
+    figure {
+      transition: opacity 400ms ease-in-out;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: grid;
+      grid-template-columns: auto minmax(451px, 1090px);
+
+      &::before {
+        display: block;
+        content: " ";
+        width: 350px;
+        padding: 0 67px;
+        justify-self: center;
+        align-self: center;
+      }
+
+      picture {
+        align-self: center;
+        margin: 0 auto;
+      }
+    }
+
+    .collapsed figure {
+      opacity: 0;
+    }
+  }
+}
 
 .accordionItem {
   border-top: 1px var(--accordion-border-color) solid;
@@ -144,22 +217,24 @@ $container-border-radius: (
 
 .imageAccordionContainer {
   border-radius: var(--global-card-corner-radius);
-
+  --accordion-side-padding: 90px;
+  --accordion-width: 350px;
+  --accordion-content-width: 323px;
   /* reset - sk overrides */
   p + *,
   ul + *,
   ol + * {
     margin-top: 0;
   }
-  padding: 67px;
+  padding: 0 67px;
   position: relative;
   z-index: 1;
   background-color: var(--global-section-background-color-alt);
   overflow: hidden;
   height: 784px;
-  //display: grid;
+  display: grid;
   // min/max of image container width per design specs
-  // grid-template-columns: auto minmax(451px, 1090px);
+  grid-template-columns: auto minmax(451px, 1090px);
   grid-template-columns:
     calc(var(--accordion-width) + var(--accordion-side-padding) * 2)
     1fr;
@@ -182,95 +257,6 @@ $container-border-radius: (
   @each $viewport, $radius in $container-border-radius {
     @include viewport($viewport) {
       border-radius: $radius;
-    }
-  }
-}
-
-.accordion {
-  --accordion-button-padding-top: 1em;
-  --accordion-button-padding-bottom: 1em;
-  --accordion-border-color: rgb(210, 210, 215);
-  --accordion-border-width: 1px;
-  --accordion-content-padding-top: 0;
-  --accordion-content-padding-bottom: 1em;
-  --accordion-content-paragraph-max-width: 83.3333333333%;
-  --accordion-content-paragraph-padding-top: 0;
-  --accordion-content-paragraph-padding-bottom: 0.8em;
-  --accordion-icon-color: rgb(134, 134, 139);
-  --accordion-icon-color-hover: rgb(110, 110, 115);
-  --accordion-icon-width: 1em;
-  --accordion-icon-height: auto;
-  --accordion-icon-stroke-width: 2.25;
-  --accordion-icon-svg-width: 1em;
-  --accordion-title-max-width: 83.3333333333%;
-  --accordion-transition-duration: 400ms;
-  --accordion-side-padding: 90px;
-  --accordion-width: 350px;
-  --accordion-content-width: 323px;
-  margin: 0;
-  list-style: none;
-  // width: var(--accordion-width);
-  padding: 0 67px;
-  justify-self: center;
-  align-self: center;
-  margin: 0;
-  // @include viewport(large) {
-  //   width: 350px;
-  // }
-  @include viewport(medium) {
-    width: 535px;
-    height: max-content;
-    padding: 88px 46px;
-  }
-
-  @include viewport(small) {
-    width: 361px;
-    padding: 56px 30px;
-  }
-  @include viewport(xsmall) {
-    width: 240px;
-    padding: 30px 20px;
-  }
-
-  figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    picture {
-      display: block;
-    }
-  }
-  @media screen and (min-width: 1069px) {
-    width: var(--accordion-width);
-    figure {
-      transition: opacity 400ms ease-in-out;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: grid;
-      grid-template-columns: auto minmax(451px, 1090px);
-
-      &::before {
-        display: block;
-        content: " ";
-        width: 350px;
-        padding: 0 67px;
-        justify-self: center;
-        align-self: center;
-      }
-
-      picture {
-        align-self: center;
-        margin: 0 auto;
-      }
-    }
-
-    .collapsed figure {
-      opacity: 0;
     }
   }
 }

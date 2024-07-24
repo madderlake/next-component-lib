@@ -1,13 +1,9 @@
 /* @import "ac-sasskit/core"; */
 @import "./fonts";
-@mixin viewport-set(
-  $viewport-name,
-  $minWidth,
-  $maxWidth: 0,
-  $content: $contentWidth
-) {
+@mixin viewport-set($viewport-name, $minWidth, $maxWidth: 0, $contentWidth) {
   min-width: $minWidth;
   max-width: $maxWidth;
+  content: $contentWidth;
 }
 :root {
   --sk-body-text-color: rgb(29, 29, 31);
@@ -41,7 +37,14 @@ html {
     sans-serif;
   quotes: "â€œ" "â€";
 }
-
+// @include viewport-set(
+//   "large up",
+//   (
+//     min-width: 1069px,
+//     max-width: 0,
+//     content: 87.5vw,
+//   )
+// );
 @mixin viewport($size) {
   @if $size == xsmall {
     @media (min-width: 320px) and (max-width: 480px) {
@@ -57,6 +60,10 @@ html {
     }
   } @else if $size == large {
     @media (min-width: 1069px) and (max-width: 1440px) {
+      @content;
+    }
+  } @else if $size == large-up {
+    @media (min-width: 1069px) {
       @content;
     }
   } @else if $size == xlarge {
