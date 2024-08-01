@@ -156,7 +156,7 @@ $container-border-radius: (
   z-index: 1;
   background-color: var(--global-section-background-color-alt);
   overflow: hidden;
-  height: 784px;
+  min-height: 784px;
   //display: grid;
   // min/max of image container width per design specs
   // grid-template-columns: auto minmax(451px, 1090px);
@@ -236,7 +236,7 @@ $container-border-radius: (
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 0;
     picture {
       display: block;
     }
