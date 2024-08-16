@@ -28,7 +28,7 @@ export function AugmentAccordion({
     },
     {
       [animationStyles.buildIn]: animate,
-    }
+    },
   );
 
   useEffect(() => {
