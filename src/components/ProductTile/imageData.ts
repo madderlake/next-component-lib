@@ -54,7 +54,7 @@ export const IMAGE_DATA: ImageData = {
       density: 2,
       width: 356,
       height: 402,
-      src: "assets/product-tile/eqHeight/ipad_pro_2x.png",
+      src: "assets/product-tile/ipad-pro/ipad_pro_small.png",
     },
     small: {
       viewport: "small",
