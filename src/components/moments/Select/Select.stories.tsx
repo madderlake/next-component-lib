@@ -9,7 +9,7 @@ import { Select } from "./Select";
 import { SELECT_MOMENT_PROPS } from "./Select.data";
 
 export default {
-  title: "Moments/Select Moment",
+  title: "Sections/iPad Select Moment",
 } satisfies Meta<typeof Select>;
 
 const Template: StoryFn<SelectProps> = (args) => (
