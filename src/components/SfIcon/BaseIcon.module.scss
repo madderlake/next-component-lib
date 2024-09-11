@@ -1,23 +1,4 @@
-// @import "ac-sasskit/core/icons";
 
-// https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/2b7cd5b2efba05e013ce7acc833e232d4eee8f91/src/scss/ac-sasskit/base/_icons.scss#L13-L25
-.icon {
-  // @include icon-base;
-}
-
-// https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/2b7cd5b2efba05e013ce7acc833e232d4eee8f91/src/scss/ac-sasskit/base/_icons.scss#L27-L39
-.iconAfter {
-  // @include icon-after;
-}
-
-// https://github.pie.apple.com/marcom-frontend/ac-sasskit/blob/2b7cd5b2efba05e013ce7acc833e232d4eee8f91/src/scss/ac-sasskit/base/_icons.scss#L41-L56
-.iconBefore {
-  // @include icon-before;
-}
-
-// SassKit ltr/rtl mixins scope to the html element
-// Omitting the html scoping enables these
-// styles to also apply to `dir` changes mid-page
 .icon::after,
 .icon::before {
   content: var(--sficon-char-ltr);
