@@ -1,0 +1,9 @@
+@import "styles/shared/_core";
+
+.modal {
+  --modal-overlay-width: min(87.5%, 1260px);
+
+  @include viewport(xsmall) {
+    --modal-overlay-width: 100%;
+  }
+}

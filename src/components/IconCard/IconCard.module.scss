@@ -1,0 +1,37 @@
+@import "@/styles/shared/core";
+
+.headline {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.iconCard {
+  $padding-inline-end: 72px;
+
+  padding: 32px;
+  width: 372px;
+  min-height: 217px;
+  padding-inline-end: $padding-inline-end;
+
+  @include viewport(xlarge) {
+    width: 405px;
+  }
+
+  @include viewport(medium) {
+    width: 344px;
+    min-height: 213px;
+    padding: 28px;
+    padding-inline-end: $padding-inline-end;
+  }
+
+  @include viewport(small) {
+    width: 304px;
+    min-height: 199px;
+    padding: 24px;
+    padding-inline-end: $padding-inline-end;
+  }
+
+  @include viewport(xsmall) {
+    width: 260px;
+  }
+}

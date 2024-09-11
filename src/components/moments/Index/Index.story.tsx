@@ -8,12 +8,6 @@ import { INDEX_MOMENT_DATA } from "./Index.data";
 
 export default {
   title: "Sections/Generic Index Section",
-  parameters: {
-    sourceCodeUrl:
-      "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/moments/Index",
-    specUrl:
-      "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/sections/#s7",
-  },
 } satisfies Meta<typeof IndexSection>;
 
 const Template: StoryFn<IndexSectionProps> = (args) => (

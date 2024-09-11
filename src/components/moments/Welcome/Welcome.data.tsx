@@ -2,8 +2,7 @@ import { WELCOME_FALLBACK_IMG_DATA } from "@/components/WelcomeVideo/imgData";
 
 import type { WelcomeProps } from "./Welcome";
 
-const VIDEO_BASE_PATH =
-  "https://ic-ipad-01.preview.apple.com/105/media/us/ipad/2023/98dee9eb-3cc4-444b-bd36-e0dbe514886f/feature-video/";
+const VIDEO_BASE_PATH = "PUT PATH HERE";
 
 const fallbackImages = Object.values(WELCOME_FALLBACK_IMG_DATA);
 // TODO: update path once VAT assets are unblocked

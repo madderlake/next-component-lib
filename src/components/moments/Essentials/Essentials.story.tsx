@@ -13,12 +13,6 @@ import { ESSENTIALS_MOMENT_DATA } from "./Essentials.data";
 
 export default {
   title: "Sections/Generic Essentials Section",
-  parameters: {
-    sourceCodeUrl:
-      "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/moments/Essentials",
-    specUrl:
-      "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/sections/#s5",
-  },
 } satisfies Meta<typeof Essentials>;
 
 const Template: StoryFn<EssentialsProps> = (args) => {

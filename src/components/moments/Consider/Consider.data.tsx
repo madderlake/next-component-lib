@@ -30,10 +30,8 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       modal: {
         topicLabel: "Topic label #1",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #1</h1>
-        )
-      }
+        content: <h1>Feature Card modal #1</h1>,
+      },
     },
     {
       topicLabel: "creativity",
@@ -52,16 +50,14 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       modal: {
         topicLabel: "Topic label #2",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #2</h1>
-        )
-      }
+        content: <h1>Feature Card modal #2</h1>,
+      },
     },
     {
-      topicLabel: "apple pencil",
+      topicLabel: "pencil",
       headline: (
         <>
-          Take notes, mark up, and <br /> create with Apple Pencil.
+          Take notes, mark up, and <br /> create with Pencil.
         </>
       ),
       images: Object.values(IMAGE_DATA.pencil),
@@ -69,15 +65,13 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       textZoomBackgroundColor: "rgba(255, 99, 71, 0.88)",
       accessibilityText: "",
       analytics: {
-        "data-analytics-gallery-item-id": "gallery-item-apple-pencil",
+        "data-analytics-gallery-item-id": "gallery-item-pencil",
       },
       modal: {
         topicLabel: "Topic label #3",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #3</h1>
-        )
-      }
+        content: <h1>Feature Card modal #3</h1>,
+      },
     },
     {
       topicLabel: "learning",
@@ -98,10 +92,8 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       modal: {
         topicLabel: "Topic label #4",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #4</h1>
-        )
-      }
+        content: <h1>Feature Card modal #4</h1>,
+      },
     },
     {
       topicLabel: "productivity",
@@ -122,10 +114,8 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       modal: {
         topicLabel: "Topic label #5",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #5</h1>
-        )
-      }
+        content: <h1>Feature Card modal #5</h1>,
+      },
     },
     {
       topicLabel: "creativity",
@@ -144,16 +134,14 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       modal: {
         topicLabel: "Topic label #6",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #6</h1>
-        )
-      }
+        content: <h1>Feature Card modal #6</h1>,
+      },
     },
     {
-      topicLabel: "apple pencil",
+      topicLabel: "pencil",
       headline: (
         <>
-          Take notes, mark up, and <br /> create with Apple Pencil.
+          Take notes, mark up, and <br /> create with Pencil.
         </>
       ),
       images: Object.values(IMAGE_DATA.pencil),
@@ -161,15 +149,13 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       textZoomBackgroundColor: "rgba(255, 99, 71, 0.88)",
       accessibilityText: "",
       analytics: {
-        "data-analytics-gallery-item-id": "gallery-item-apple-pencil-2",
+        "data-analytics-gallery-item-id": "gallery-item-pencil-2",
       },
       modal: {
         topicLabel: "Topic label #7",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #7</h1>
-        )
-      }
+        content: <h1>Feature Card modal #7</h1>,
+      },
     },
     {
       topicLabel: "learning",
@@ -190,10 +176,8 @@ export const CONSIDER_MOMENT_DATA: ConsiderProps = {
       modal: {
         topicLabel: "Topic label #8",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #8</h1>
-        )
-      }
+        content: <h1>Feature Card modal #8</h1>,
+      },
     },
   ],
 };

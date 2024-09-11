@@ -11,12 +11,6 @@ import { WELCOME_MOMENT_DATA } from "./Welcome.data";
 
 export default {
   title: "Sections/Generic Welcome Section",
-  parameters: {
-    sourceCodeUrl:
-      "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/moments/Welcome",
-    specUrl:
-      "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/sections/#s1",
-  },
 } satisfies Meta<typeof Welcome>;
 
 const Template: StoryFn<WelcomeProps> = (args) => (

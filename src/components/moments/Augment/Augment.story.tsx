@@ -12,12 +12,6 @@ import { ResponsivePicture } from "@/components/ResponsivePicture/ResponsivePict
 
 export default {
   title: "Sections/Generic Augment Section",
-  parameters: {
-    sourceCodeUrl:
-      "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/moments/Augment",
-    specUrl:
-      "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/sections/#s6",
-  },
 } satisfies Meta<typeof Augment>;
 
 const Template: StoryFn<AugmentProps> = (args) => (

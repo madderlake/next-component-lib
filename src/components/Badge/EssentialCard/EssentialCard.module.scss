@@ -1,0 +1,135 @@
+@use "sass:math";
+@import "styles/shared/core";
+@import "ac-sasskit/modules/tile/core";
+@import "ac-sasskit/modules/tile/utilities";
+
+// card width at the max width of each viewport
+$card-widths: (
+  "xlarge": 830,
+  "large": 620,
+  "medium": 457,
+  "small": 311,
+  "xsmall": 260,
+);
+
+.image {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+  &.left {
+    left: 0;
+  }
+  &.center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &.right {
+    right: 0;
+  }
+}
+
+.essentialCard {
+  background-color: swatch(fill-tertiary);
+  min-height: 560px;
+  overflow: hidden;
+  padding: 56px 32px 400px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+
+  @include viewport(xlarge) {
+    min-height: 620px;
+    padding-bottom: 460px;
+  }
+  @include viewport(medium) {
+    padding-bottom: 404px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  @include viewport(small) {
+    min-width: 304px;
+    padding: 48px 24px 426px;
+  }
+  @include viewport(xsmall) {
+    min-height: 480px;
+    min-width: unset;
+    padding-bottom: 346px;
+    width: 260px;
+  }
+
+  @each $viewport, $width in $card-widths {
+    @include viewport($viewport) {
+      $card-scale-value: math.div(($width + 6), $width);
+
+      &:hover {
+        transform: scale(#{$card-scale-value});
+      }
+    }
+  }
+
+  &.bottom {
+    padding-bottom: 56px;
+    padding-top: 400px;
+
+    @include viewport(xlarge) {
+      padding-top: 460px;
+    }
+    @include viewport(medium) {
+      padding-top: 404px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    @include viewport(small) {
+      padding-bottom: 48px;
+      padding-top: 426px;
+    }
+    @include viewport(xsmall) {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 346px;
+    }
+
+    .image {
+      top: 0;
+    }
+  }
+}
+
+.blockLink {
+  color: inherit;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.text {
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  margin-bottom: 8px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.copy {
+  margin: 0 0 $paragraph-plus-element-margin;
+}
+
+.link {
+  pointer-events: all;
+  position: relative;
+  z-index: 2;
+}

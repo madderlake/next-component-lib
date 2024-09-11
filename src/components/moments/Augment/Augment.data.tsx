@@ -69,17 +69,16 @@ export const AUGMENT_MOMENT_DATA: AugmentProps = {
         <>
           Achieve your goals with
           <br />
-          Apple Watch and iPad.
+          Watch and iPad.
         </>
       ),
       content: (
         <>
           <p>
-            Paired with Apple Watch, iPad can be a powerful tool in your health
-            and fitness journey. Sensors in your AppleWatch combine with
-            advanced algorithms to give you metrics that motivate you in your
-            Apple Fitness+ workouts, and you can see that data synced to your
-            iPad in realtime.
+            Paired with Watch, iPad can be a powerful tool in your health and
+            fitness journey. Sensors in your Watch combine with advanced
+            algorithms to give you metrics that motivate you in your Fitness+
+            workouts, and you can see that data synced to your iPad in realtime.
           </p>
           <ResponsivePicture
             images={Object.values(IMAGE_DATA.tab3)}

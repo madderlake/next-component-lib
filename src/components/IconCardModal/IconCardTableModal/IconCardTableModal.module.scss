@@ -1,0 +1,17 @@
+@import "styles/shared/core";
+
+.iconCardTable {
+  margin-top: 64px;
+
+  @include viewport(small) {
+    margin-top: 40px;
+  }
+}
+
+.link {
+  margin-top: 16px;
+
+  @include viewport(small) {
+    margin-top: 20px;
+  }
+}

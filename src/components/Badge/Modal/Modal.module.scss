@@ -1,0 +1,159 @@
+@use "sass:math";
+@import "styles/shared/_core";
+
+$dark-theme-background-color: swatch(fill, dark);
+$dark-theme-text-color: swatch(glyph-gray, dark);
+
+html.hasModal {
+  overflow: hidden;
+
+  body {
+    padding-inline-end: var(--modal-scrollbar-buffer);
+  }
+}
+
+// background overlay with scrim
+.modalOverlay {
+  --modal-close-timeout: 400ms;
+  --modal-scrim-background: rgba(0, 0, 0, 0.48);
+  --modal-overlay-background: #{swatch(fill)};
+  --modal-overlay-border-radius-top: var(--corner-radius);
+  --modal-overlay-margin-top: 40px;
+  --modal-overlay-margin-bottom: var(--modal-overlay-margin-top);
+  --modal-overlay-padding-bottom: 76px;
+  --modal-overlay-padding-inline: 76px;
+  --modal-overlay-padding-top: 76px;
+  --modal-overlay-border-radius-bottom: var(--modal-overlay-border-radius-top);
+  --modal-overlay-width: 816px;
+  --modal-close-button-offset-top: 20px;
+  --modal-close-button-offset-inline-start: 20px;
+
+  background: var(--modal-scrim-background, var(--modal-overlay-background));
+  backdrop-filter: blur(20px);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity var(--modal-close-timeout) ease;
+  z-index: -1;
+  // grid must be used instead of flex, since flex's behavior will
+  // cause the modal's platter to bleed off the top of the window
+  // with this setup when there is enough content to trigger overflow
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  // Ensures the modal's platter in xmsall always fills the full height
+  @include viewport(xsmall) {
+    align-items: stretch;
+  }
+}
+
+.modalOpen {
+  opacity: 1;
+  z-index: 11000;
+}
+
+.modalClose {
+  opacity: 0;
+}
+
+// the dialogue box
+.modal {
+  @include viewport(medium) {
+    // default modal width down through medium is static
+    // We can't use the viewport-content-for mixin because
+    // our custom viewport content widths are set to be responsive
+    // which is different from SassKit OOTB
+    --modal-overlay-width: 692px;
+  }
+
+  @include viewport(small) {
+    --modal-overlay-width: max(
+      #{viewport-content-for(small)},
+      #{viewport-get-property-for(xsmall, max-width)}
+    );
+    --modal-overlay-padding-top: 60px;
+    --modal-overlay-padding-bottom: 60px;
+    --modal-overlay-padding-inline: 60px;
+  }
+
+  @include viewport(xsmall) {
+    --modal-overlay-border-radius-bottom: 0;
+    --modal-overlay-width: 100%;
+    --modal-close-button-offset-top: max(16px, env(safe-area-inset-top));
+    --modal-close-button-offset-inline-start: max(
+      16px,
+      env(safe-area-inset-#{inline-start()})
+    );
+    --modal-overlay-margin-top: 20px;
+    --modal-overlay-margin-bottom: 0;
+    --modal-overlay-padding-inline: 6.5%;
+  }
+
+  background: var(--modal-overlay-background);
+  border-radius: var(--modal-overlay-border-radius-top)
+    var(--modal-overlay-border-radius-top)
+    var(--modal-overlay-border-radius-bottom)
+    var(--modal-overlay-border-radius-bottom);
+  margin-bottom: var(--modal-overlay-margin-bottom);
+  margin-top: var(--modal-overlay-margin-top);
+  position: relative;
+  width: var(--modal-overlay-width);
+  z-index: 1;
+
+  &:focus {
+    @include focus-shadow;
+  }
+}
+
+// content within the dialogue box
+.modalContentContainer {
+  padding-inline-start: var(--modal-overlay-padding-inline);
+  -webkit-padding-start: var(--modal-overlay-padding-inline);
+  padding-inline-end: var(--modal-overlay-padding-inline);
+  -webkit-padding-end: var(--modal-overlay-padding-inline);
+  padding-bottom: var(--modal-overlay-padding-bottom);
+  padding-top: var(--modal-overlay-padding-top);
+}
+
+// close button in the upper right corner of the dialogue box
+.closeButton {
+  position: sticky;
+  top: var(--modal-close-button-offset-top);
+}
+
+// A wrapper is needed to provide the positioning for the button
+// since the button itself needs to be position: sticky
+// this is ultimately cleaner than the alternative which used a
+// combination of flex, order, and negative margins.
+.closeButtonContainer {
+  position: absolute;
+  z-index: 1;
+  width: 36px;
+  top: var(--modal-close-button-offset-top);
+  bottom: 0;
+  inset-inline-end: var(--modal-close-button-offset-inline-start);
+}
+
+.boldModalCopy {
+  font-weight: 600;
+}
+
+.headline {
+  margin-top: 12px;
+
+  @include viewport(small) {
+    margin-top: 8px;
+  }
+}
+
+.darkTheme {
+  --sk-body-text-color: #{$dark-theme-text-color};
+  --sk-headline-text-color: #{$dark-theme-text-color};
+  background: $dark-theme-background-color;
+  color: $dark-theme-text-color;
+}

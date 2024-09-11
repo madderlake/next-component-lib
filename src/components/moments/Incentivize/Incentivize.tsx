@@ -95,6 +95,10 @@ export function Incentivize({
                 inlineHeader={currentModalContent.inlineHeader}
                 link={currentModalContent.link}
                 analytics={currentModalContent.analytics}
+                role={undefined}
+                children={undefined}
+                closeTimeoutMS={undefined}
+                shouldCloseOnOverlayClick={undefined}
               />
             )}
         </ModalProvider>

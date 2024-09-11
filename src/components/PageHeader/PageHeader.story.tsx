@@ -27,7 +27,3 @@ Example.args = {
   title: "Title",
   description: "Description lorem ullamcorer ipsum dolor.",
 };
-Example.parameters = {
-  specUrl:
-    "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/page-header",
-};

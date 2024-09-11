@@ -30,11 +30,6 @@ const items: ColorIndicatorProps["items"] = [
     color: "red",
     name: "Red",
   },
-  // {
-  //   type: "picture",
-  //   src: "https://standards.apple.com/element-library/assets/patterns/colorindicator/rainbow-swatch.png",
-  //   alt: "Rainbow",
-  // },
   {
     type: "label",
     text: "+4 more",
@@ -48,7 +43,7 @@ const Template: StoryFn<ColorIndicatorProps> = (args) => (
 );
 
 export const InteractiveExample: StoryFn<ColorIndicatorProps> = Template.bind(
-  {}
+  {},
 );
 InteractiveExample.args = {
   ariaLabel: "Storybook Colors",

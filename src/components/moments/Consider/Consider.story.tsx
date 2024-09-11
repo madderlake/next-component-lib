@@ -9,13 +9,7 @@ import { Consider } from "./Consider";
 import { CONSIDER_MOMENT_DATA } from "./Consider.data";
 
 export default {
-  title: "Sections/Generic Consider Section",
-  parameters: {
-    sourceCodeUrl:
-      "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/moments/Consider",
-    specUrl:
-      "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/sections/#s2",
-  },
+  title: "Sections/Consider Section",
 } satisfies Meta<typeof Consider>;
 
 const Template: StoryFn<ConsiderProps> = (args) => {
@@ -46,10 +40,8 @@ InteractiveExample.args = {
       modal: {
         topicLabel: "Topic label #1",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #1</h1>
-        )
-      }
+        content: <h1>Feature Card modal #1</h1>,
+      },
     },
     {
       accessibilityText: "Laboris consectetur",
@@ -60,10 +52,8 @@ InteractiveExample.args = {
       modal: {
         topicLabel: "Topic label #2",
         headline: "Feature Card modal headline",
-        content: (
-          <h1>Feature Card modal #2</h1>
-        )
-      }
+        content: <h1>Feature Card modal #2</h1>,
+      },
     },
   ],
   noBottomPadding: false,

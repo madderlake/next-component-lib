@@ -20,10 +20,6 @@ const Template: StoryFn<SectionHeaderProps> = (props) => {
 
 export const Example: StoryFn<SectionHeaderProps> = Template.bind({});
 Example.storyName = "SectionHeader";
-Example.parameters = {
-  specUrl:
-    "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/card-tile-set/#s6",
-};
 Example.args = {
   title: "Section Header",
   link: {

@@ -25,16 +25,16 @@ export const ESSENTIALS_MOMENT_DATA: EssentialsProps = {
   items: [
     {
       copy: "Be ready when inspiration strikes.",
-      header: "Apple Pencil",
+      header: "Pencil",
       images: pencilImages,
       link: {
         children: "Learn more",
         href: "#",
-        analytics: { "data-analytics-title": "learn more - apple pencil" },
+        analytics: { "data-analytics-title": "learn more - pencil" },
       },
       analytics: {
-        "data-analytics-activitymap-region-id": "apple pencil",
-        "data-analytics-gallery-item-id": "gallery-item-apple-pencil",
+        "data-analytics-activitymap-region-id": "pencil",
+        "data-analytics-gallery-item-id": "gallery-item-pencil",
       },
     },
     {

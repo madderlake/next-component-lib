@@ -21,11 +21,11 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         width: 49,
         height: 56,
       },
-      headline: `Save up to $655 with Apple Trade In`,
+      headline: `Save up to $655 with Trade In`,
       copy: "Get credit toward your next iPad when you trade in your current one.",
       modalContent: {
         contentType: "terms",
-        topicLabel: "Save up to $655 with Apple Trade In",
+        topicLabel: "Save up to $655 with Trade In",
         headline: "headline",
         inlineHeader: "inlineHeader",
         link: {
@@ -42,7 +42,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         },
       },
       analytics: {
-        "data-analytics-title": "apple trade in",
+        "data-analytics-title": "trade in",
         "data-analytics-click": "prop3: open icon card",
         "data-analytics-activitymap-region-id": "foo",
         "data-analytics-gallery-item-id": "gallery-item-save",
@@ -56,7 +56,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         height: 56,
       },
       headline: `Pay over time, interest-free.`,
-      copy: "When you choose to check out with Apple Card Monthly Installments.",
+      copy: "When you choose to check out with Card Monthly Installments.",
       modalContent: {
         contentType: "terms",
         topicLabel: "Pay over time, interest-free",
@@ -66,7 +66,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
           children: "optional link",
           href: "#",
           analytics: {
-            "data-analytics-title": "apple card title",
+            "data-analytics-title": "card title",
           },
         },
         analytics: {
@@ -90,7 +90,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         height: 56,
       },
       headline: `Get flexible delivery and easy pickup.`,
-      copy: "Choose fast, free delivery, two-hour courier delivery from an Apple Store, or easy pickup options.",
+      copy: "Choose fast, free delivery, two-hour courier delivery from an Store, or easy pickup options.",
       modalContent: {
         contentType: "terms",
         topicLabel: "Get flexible delivery and easy pickup",
@@ -157,11 +157,11 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         width: 49,
         height: 56,
       },
-      headline: `Save up to $655 with Apple Trade In`,
+      headline: `Save up to $655 with Trade In`,
       copy: "Get credit toward your next iPad when you trade in your current one.",
       modalContent: {
         contentType: "terms",
-        topicLabel: "Save up to $655 with Apple Trade In",
+        topicLabel: "Save up to $655 with Trade In",
         headline: "headline",
         inlineHeader: "inlineHeader",
         link: {
@@ -178,7 +178,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         },
       },
       analytics: {
-        "data-analytics-title": "apple trade in",
+        "data-analytics-title": "trade in",
         "data-analytics-click": "prop3: open modal card",
         "data-analytics-activitymap-region-id": "foo",
         "data-analytics-gallery-item-id": "gallery-item-save-2",
@@ -192,7 +192,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         height: 56,
       },
       headline: `Pay over time, interest-free.`,
-      copy: "When you choose to check out with Apple Card Monthly Installments.",
+      copy: "When you choose to check out with Card Monthly Installments.",
       modalContent: {
         contentType: "terms",
         topicLabel: "Pay over time, interest-free",
@@ -226,7 +226,7 @@ export const INCENTIVIZE_MOMENT_DATA: IncentivizeProps = {
         height: 56,
       },
       headline: `Get flexible delivery and easy pickup.`,
-      copy: "Choose fast, free delivery, two-hour courier delivery from an Apple Store, or easy pickup options.",
+      copy: "Choose fast, free delivery, two-hour courier delivery from an Store, or easy pickup options.",
       modalContent: {
         contentType: "terms",
         topicLabel: "Get flexible delivery and easy pickup",

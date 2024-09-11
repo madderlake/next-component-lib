@@ -1,0 +1,92 @@
+@import "@/styles/shared/core";
+@import "ac-sasskit/modules/tile/core";
+@import "ac-sasskit/modules/tile/utilities";
+
+@include typography-set(
+  topic-label,
+  (
+    large:
+      typespec-extend("17_21_semibold", $extends: "17_21", $weight: semibold),
+    medium:
+      typespec-extend("14_18_semibold", $extends: "14_18", $weight: semibold),
+  )
+);
+
+:export {
+  fillLightAlpha: color-adjust-alpha(swatch(fill, light), -0.2);
+  fillDarkAlpha: color-adjust-alpha(swatch(fill, dark), -0.2);
+}
+
+.featureCard {
+  min-height: 680px;
+  max-height: 744px;
+  width: 372px;
+  padding: 32px;
+  position: relative;
+
+  @include viewport(xlarge) {
+    min-height: 740px;
+    max-height: 804px;
+    width: 405px;
+  }
+  @include viewport(medium) {
+    min-height: 628px;
+    max-height: 684px;
+    width: 344px;
+    padding: 28px;
+  }
+  @include viewport(small) {
+    min-height: 560px;
+    max-height: 610px;
+    width: 304px;
+    padding: 24px;
+  }
+  @include viewport(xsmall) {
+    min-height: 480px;
+    max-height: 630px;
+    width: 260px;
+    padding: 24px;
+  }
+}
+
+.topicLabel {
+  @include typography(topic-label);
+}
+
+.headline {
+  margin-top: 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.headline,
+.topicLabel {
+  position: relative;
+  z-index: 1;
+}
+
+.backgroundImage {
+  position: absolute;
+  background-position: bottom center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  overflow: hidden;
+  border-radius: var(--corner-radius);
+}
+
+.textZoom {
+  .headline,
+  .topicLabel {
+    background: var(--text-bg);
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% + 24px);
+    margin-inline-start: -12px;
+  }
+}

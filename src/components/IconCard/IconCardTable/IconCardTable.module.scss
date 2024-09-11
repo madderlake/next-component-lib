@@ -1,0 +1,52 @@
+@import "styles/shared/core";
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  column-gap: 80px;
+}
+
+.row {
+  padding: 24px 0;
+
+  @include viewport(small) {
+    padding: 20px 0;
+  }
+
+  border-bottom: 1px solid swatch(fill-gray-tertiary);
+
+  &:first-child {
+    padding-top: 32px;
+
+    @include viewport(small) {
+      padding-top: 24px;
+    }
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.columnItem {
+  @include typography(eyebrow-reduced);
+
+  align-self: center;
+  margin: 0;
+
+  &:last-child {
+    text-align: end;
+  }
+}
+
+.columnLabel {
+  @include typography(body-reduced-tight);
+  font-weight: 600;
+  align-self: end;
+  margin-top: 0;
+
+  &:last-child {
+    text-align: end;
+  }
+}

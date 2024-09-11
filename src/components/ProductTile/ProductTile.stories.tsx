@@ -89,10 +89,3 @@ InteractiveExample.argTypes = {
   objectFit: { table: { disable: true } },
   collapseIndicators: { table: { disable: true } },
 };
-
-InteractiveExample.parameters = {
-  specUrl:
-    "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/product-tile/",
-  sourceCodeUrl:
-    "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/ProductTile",
-};

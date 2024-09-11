@@ -1,0 +1,25 @@
+@import "@/styles/shared/core";
+
+.inlineHeader {
+  margin-top: 20px;
+
+  @include viewport(small) {
+    margin-top: 16px;
+  }
+}
+
+.link {
+  margin-top: 40px;
+
+  @include viewport(small) {
+    margin-top: 32px;
+  }
+}
+
+.image {
+  margin-top: 64px;
+
+  @include viewport(small) {
+    margin-top: 40px;
+  }
+}

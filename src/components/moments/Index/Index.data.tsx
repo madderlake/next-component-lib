@@ -46,10 +46,10 @@ export const INDEX_MOMENT_DATA: IndexSectionProps = {
             },
           },
           {
-            text: "Apple Pencil",
+            text: "Pencil",
             href: "#",
             analytics: {
-              "data-analytics-title": "apple pencil",
+              "data-analytics-title": "pencil",
             },
           },
           {

@@ -1,35 +1,26 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 
-import { BaseExperienceProvider } from "@/contexts/BaseExperience/BaseExperienceProvider";
 import { GalleryContextProvider } from "@/contexts/Gallery/GalleryContextProvider";
-import { SassKitViewportsProvider } from "@/contexts/Viewport/SassKitViewportsProvider";
 import { WindowContextProvider } from "@/contexts/Window/WindowContextProvider";
-import sassData from "@/styles/shared/sasskitData.module.scss";
 
 import type { IncentivizeProps } from "./Incentivize";
 import { Incentivize } from "./Incentivize";
 import { INCENTIVIZE_MOMENT_DATA } from "./Incentivize.data";
-
+import { DefaultContexts } from "@/stories/components/DefaultContexts";
 export default {
-  title: "Sections/Generic Incentivize Section",
-  parameters: {
-    sourceCodeUrl:
-      "https://interactive-git.apple.com/interactive-rome/ipad/tree/develop/components/moments/Incentivize",
-    specUrl:
-      "https://pages.github.pie.apple.com/marcom-frontend/collections-specs/sections/#s4",
-  },
+  title: "Sections/Incentivize Section",
 } satisfies Meta<typeof Incentivize>;
 
 const Template: StoryFn<IncentivizeProps> = (args) => (
   <WindowContextProvider wait={300}>
-    <SassKitViewportsProvider sassData={sassData}>
-      <BaseExperienceProvider>
-        <GalleryContextProvider>
-          <Incentivize {...args} />
-        </GalleryContextProvider>
-      </BaseExperienceProvider>
-    </SassKitViewportsProvider>
+    <DefaultContexts>
+      {/* <BaseExperienceProvider> */}
+      <GalleryContextProvider>
+        <Incentivize {...args} />
+      </GalleryContextProvider>
+      {/* </BaseExperienceProvider> */}
+    </DefaultContexts>
   </WindowContextProvider>
 );
 
