@@ -1,0 +1,48 @@
+@use "sass:math";
+@import "@/styles/shared/core";
+@import "ac-sasskit/modules/tile/core";
+@import "ac-sasskit/modules/tile/utilities";
+
+$card-widths: (
+  "xlarge": 405,
+  "large": 372,
+  "medium": 344,
+  "small": 304,
+  "xsmall": 260,
+);
+
+$card-background-color: swatch(fill);
+$card-dark-theme-background-color: #242426;
+$card-dark-theme-text-color: swatch(glyph-gray, dark);
+
+.baseCard {
+  @include center;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  border-radius: var(--corner-radius);
+  transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
+  --card-background-color: #{$card-background-color};
+  --card-dark-theme-background-color: #{$card-dark-theme-background-color};
+
+  &.darkTheme {
+    --sk-body-text-color: #{$card-dark-theme-text-color};
+    --sk-headline-text-color: #{$card-dark-theme-text-color};
+    --card-background-color: var(--card-dark-theme-background-color);
+
+    color: $card-dark-theme-text-color;
+  }
+
+  background-color: var(--card-background-color);
+
+  @each $viewport, $width in $card-widths {
+    @include viewport($viewport) {
+      width: $width + px;
+      $card-scale-value: math.div(($width + 6), $width);
+
+      &:hover {
+        transform: scale(#{$card-scale-value});
+      }
+    }
+  }
+}
